@@ -122,7 +122,7 @@
     \paragraph{}
     On cherche une sorte d'interpolation entre $\rho_1$ et $rho_2$, une sorte de $\lambda \in [0,1]$ qui permettrait de trouver une densité du type $(1-\lambda) \rho_1 + \lambda \rho_2$. Mais c'est plus compliqué, donc on va remplacer le "$(1-\lambda)$" par une équation.
     
-    Pour ça, on se fixe un $\epsilon > 0$ et on se donne $W_\epsilon$ une distance sur $\mathcal{P}(\Omega)$ et on va chercher un barycentre pour cette distance. C'est-à-dire un $\lambda \in [0,1]$ tel que \footnote{cf formule (8) du papier}
+    Pour ça, on se fixe un $\epsilon > 0$ et on se donne $W_\epsilon$ une distance sur $\mathcal{P}(\Omega)$ et on va chercher un barycentre pour cette distance. C'est-à-dire un  $\bar{\rho_\lambda}$ tel que pour $\lambda \in [0,1]$ \footnote{cf formule (8) du papier}
     \begin{equation}
     \bar{\rho_\lambda} \in \underset{\rho \in \mathcal{P}}{argmin} \hspace{0.2cm} \lambda W_\epsilon(\rho, \rho_1)^2 + (1-\lambda) W_\epsilon(\rho, \rho_2)^2
     \end{equation}
@@ -131,7 +131,7 @@
      On peut vérifier que pour $\lambda=1$, $\rho_1$ est bien solution et que pour $\lambda=0$, $\rho_2$ est aussi solution.
     
     \paragraph{Exercice}
-    Si on choisit une distance induite par une norme pour $W_\epsilon$ dans un espace vectoriel normé ( ce qui n'est pas le cas de $\mathcal{P}(\Omega)$ ! ), montrer que $\rho_\lambda$ est unique et que $\rho_\lambda = \lambda \rho_1 + (1-\lambda) \rho_2$, ce qui justifie le nom de barycentre !
+    Si on choisit une distance induite par une norme pour $W_\epsilon$ dans un espace vectoriel normé ( ce qui n'est pas le cas de $\mathcal{P}(\Omega)$ ! ), montrer que $\bar{\rho_\lambda}$ est unique et que $\bar{\rho_\lambda} = \lambda \rho_1 + (1-\lambda) \rho_2$, ce qui justifie le nom de barycentre !
     
     \newpage
     \subsection{Distance de Wasserstein régularisée}
