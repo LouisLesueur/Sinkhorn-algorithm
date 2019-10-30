@@ -1,4 +1,4 @@
-#include "utils.h"
+#include "simplex.h"
 
 using namespace std;
 
