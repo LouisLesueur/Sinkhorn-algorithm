@@ -3,7 +3,7 @@
 
 //======================CLASSE SIMPLEXE=======================
 
-//---------------------CONSTRUCTEUR----------------------------
+//---------------------CONSTRUCTEURS----------------------------
 simplex::simplex(int n){
 	size = n;
 	tab = new double[n];
@@ -14,6 +14,17 @@ simplex::simplex(int n){
 	}
 	for(int i=0; i<n; i++)
 		tab[i] /= sum;
+}
+
+simplex::simplex(double values[], int n){
+	double sum = 0;
+	size = n;
+	tab = new double[n];
+	for(int i=0; i<n; i++){
+		sum += values[i];
+		tab[i] = values[i];
+	}
+	std::cout<<sum<<std::endl;
 }
 
 //--------------------OPERATEURS----------------------------

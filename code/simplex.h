@@ -16,8 +16,12 @@ class simplex{
 		double* tab;
 		int size;
 	public:
+		//constructeur vide, nécessaire pour pi
+		simplex(){};
 		//Pour générer un simplexe de taille n
 		simplex(int n);
+		//pour construire un simplexe à partir d'un tableau
+		simplex(double values[], int n);
 		//Pour récupérer la taille du simplexe
 		int length() const{return size;};
 
