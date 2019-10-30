@@ -16,9 +16,12 @@ class simplex{
 		double* tab;
 		int size;
 	public:
+		//Pour générer un simplexe de taille n
 		simplex(int n);
+		//Pour récupérer la taille du simplexe
 		int length() const{return size;};
 
+		//Pour accèder à un élément du simplexe
 		double operator()(int i) const;
 		double& operator()(int i);
 
@@ -26,4 +29,5 @@ class simplex{
 
 };
 
+//Pour afficher les éléments du simplexe
 std::ostream& operator<<(std::ostream& str, const simplex& s);

@@ -6,5 +6,5 @@ list(APPEND CMAKE_SYSTEM_FRAMEWORK_PATH /Library/Frameworks) #Mac, why not auto?
 
 project(MOPSI)
 add_executable(MOPSI main.cpp
-	             utils.cpp utils.h)
+	             simplex.cpp simplex.h)
 #ImagineUseModules(MonProg Graphics)
