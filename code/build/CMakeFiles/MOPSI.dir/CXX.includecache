@@ -6,11 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/lotophagos/Documents/ENPC/MOPSI/code/utils.cpp
-utils.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/utils.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/main.cpp
+simplex.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/simplex.h
 
-/home/lotophagos/Documents/ENPC/MOPSI/code/utils.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/simplex.cpp
+simplex.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/simplex.h
+
+/home/lotophagos/Documents/ENPC/MOPSI/code/simplex.h
 iostream
 -
 ctime

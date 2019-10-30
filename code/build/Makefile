@@ -150,32 +150,32 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-utils.o: utils.cpp.o
+simplex.o: simplex.cpp.o
 
-.PHONY : utils.o
+.PHONY : simplex.o
 
 # target to build an object file
-utils.cpp.o:
-	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/utils.cpp.o
-.PHONY : utils.cpp.o
+simplex.cpp.o:
+	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/simplex.cpp.o
+.PHONY : simplex.cpp.o
 
-utils.i: utils.cpp.i
+simplex.i: simplex.cpp.i
 
-.PHONY : utils.i
+.PHONY : simplex.i
 
 # target to preprocess a source file
-utils.cpp.i:
-	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/utils.cpp.i
-.PHONY : utils.cpp.i
+simplex.cpp.i:
+	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/simplex.cpp.i
+.PHONY : simplex.cpp.i
 
-utils.s: utils.cpp.s
+simplex.s: simplex.cpp.s
 
-.PHONY : utils.s
+.PHONY : simplex.s
 
 # target to generate assembly for a file
-utils.cpp.s:
-	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/utils.cpp.s
-.PHONY : utils.cpp.s
+simplex.cpp.s:
+	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/simplex.cpp.s
+.PHONY : simplex.cpp.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... utils.o"
-	@echo "... utils.i"
-	@echo "... utils.s"
+	@echo "... simplex.o"
+	@echo "... simplex.i"
+	@echo "... simplex.s"
 .PHONY : help
 
 

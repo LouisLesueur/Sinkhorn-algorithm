@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MOPSI.dir/main.cpp.o"
-  "CMakeFiles/MOPSI.dir/utils.cpp.o"
+  "CMakeFiles/MOPSI.dir/simplex.cpp.o"
   "MOPSI"
   "MOPSI.pdb"
 )
