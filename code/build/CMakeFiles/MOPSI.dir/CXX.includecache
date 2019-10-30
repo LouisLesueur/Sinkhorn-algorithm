@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lotophagos/Documents/ENPC/MOPSI/code/utils.cpp
+utils.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/utils.h
+
+/home/lotophagos/Documents/ENPC/MOPSI/code/utils.h
+iostream
+-
+ctime
+-
+cmath
+-
+cstdlib
+-
+cassert
+-
+
