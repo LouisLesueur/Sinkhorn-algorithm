@@ -1,20 +1,34 @@
 #pragma once
+#include <cassert>
+#include <iostream>
+#include <ctime>
 
-class Matrice{
-public:
-	void Affiche(); 
-	double get(int i, int j) const; // Accesseur
-	void set(double x, int i, int j); // Mutateur
-	int nlig; // Nb lignes
-	int ncol; // Nb colonnes
-	Matrice operator*(Matrice & M);
-	double operator()(int i, int j); // "Accesseur amélioré"
-	void Alea(); // Attribue des coefficients aléatoires à la matrice	
-	Matrice(int n, int m); // Constructeur
-	Matrice(const Matrice & A); // Constructeur par copie
-	~Matrice(); // Destructeur
-private:
-	double* tab;
-	int* compteur;
+using namespace std;
+
+
+class Matrice {
+
+    private:
+        //m lig et n col
+        int m,n;
+        double* tab;
+        int* compteur;
+
+    public:
+        int nlignes() const {return m;}
+        int ncolonnes() const {return n;}
+
+        //Opérateurs
+        double operator()(int i, int j) const;
+        double& operator()(int i, int j);
+
+        //Constructeurs/destructeur
+        Matrice(int nligcol);
+        Matrice(int nlig, int ncol);
+        Matrice(const Matrice &A);
+        ~Matrice();
+
 };
 
+Matrice operator*(const Matrice& A, const Matrice& B);
+ostream& operator<<( ostream& str, const Matrice& A);
