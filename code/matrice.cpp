@@ -29,13 +29,13 @@ Matrice Matrice::operator/(double k){
 Matrice::Matrice(int nligcol){
     compteur=new int(1);
     m=n=nligcol;
-    tab=new vector<double>(n*m);
+    tab=new double[m*n];
 }
 
 Matrice::Matrice(int nlig, int ncol){
     compteur=new int(1);
     m=nlig; n=ncol;
-    tab=new vector<double>(m*n);
+    tab=new double[m*n];
 }
 
 Matrice::Matrice(const Matrice& A){
