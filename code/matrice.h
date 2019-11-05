@@ -2,6 +2,8 @@
 #include <cassert>
 #include <iostream>
 #include <ctime>
+#include <vector>
+
 
 using namespace std;
 
@@ -11,7 +13,7 @@ class Matrice {
     private:
         //m lig et n col
         int m,n;
-        double* tab;
+	vector<double>* tab;
         int* compteur;
 
     public:
@@ -32,3 +34,4 @@ class Matrice {
 
 Matrice operator*(const Matrice& A, const Matrice& B);
 ostream& operator<<( ostream& str, const Matrice& A);
+Matrice transpose(Matrice A);

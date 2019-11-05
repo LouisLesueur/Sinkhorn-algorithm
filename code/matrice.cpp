@@ -20,15 +20,13 @@ double& Matrice::operator()(int i, int j) {
 Matrice::Matrice(int nligcol){
     compteur=new int(1);
     m=n=nligcol;
-    tab=new double[n*m];
-    cout<<"Nouvelle matrice carrée de taille "<<nligcol<<endl;
+    tab=new vector<double>(n*m);
 }
 
 Matrice::Matrice(int nlig, int ncol){
     compteur=new int(1);
     m=nlig; n=ncol;
-    tab=new double[m*n];
-    cout<<"Nouvelle matrice de taille "<<nlig<<" "<<ncol<<endl;
+    tab=new vector<double>(m*n);
 }
 
 Matrice::Matrice(const Matrice& A){
@@ -36,7 +34,6 @@ Matrice::Matrice(const Matrice& A){
     *compteur+=1;
     m=A.m; n=A.n;
     tab=A.tab;
-    cout<<"Matrice copiée ( shallow copy )"<<endl;
 }
 
 /*------------------Destructeur------------------*/
@@ -46,7 +43,6 @@ Matrice::~Matrice(){
     if(*compteur==0){
         delete compteur;
         delete [] tab;
-        cout<<"Matrice détruite !"<<endl;
     }
 }
 
@@ -77,4 +73,13 @@ ostream& operator<<( ostream& str, const Matrice& A) {
         str<<endl;
     }
     return str;
+}
+
+Matrice transpose(Matrice A){
+	Matrice B(A.ncolonnes(), A.nlignes());
+	for(int i=0; i<A.nlignes(); i++){
+		for(int j=0; j<A.ncolonnes(); j++)
+			B(j,i)=A(i,j);
+	}
+	return B;
 }
