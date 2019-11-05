@@ -15,6 +15,15 @@ double& Matrice::operator()(int i, int j) {
     return tab[i*n+j];
 }
 
+Matrice Matrice::operator*(double k){
+	for(int i=0; i<n*m; i++)
+		tab[i]*=k;
+}
+
+Matrice Matrice::operator/(double k){
+	for(int i=0; i<n*m; i++)
+		tab[i]/=k;
+}
 /*------------------Constructeurs------------------*/
 
 Matrice::Matrice(int nligcol){
@@ -82,4 +91,13 @@ Matrice transpose(Matrice A){
 			B(j,i)=A(i,j);
 	}
 	return B;
+}
+
+
+Matrice operator/(Matrice A, Matrice B){
+	Matrice C(A.nlignes(), A.ncolonnes());
+	for(int i=0; i<A.nlignes(); i++){
+		for(int j=0; j<A.ncolonnes(); j++)
+			C(i,j)=A(i,j)/B(i,j);
+	}
 }

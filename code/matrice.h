@@ -24,6 +24,9 @@ class Matrice {
         double operator()(int i, int j) const;
         double& operator()(int i, int j);
 
+	Matrice operator*(double k);
+	Matrice operator/(double k);
+
         //Constructeurs/destructeur
         Matrice(int nligcol);
         Matrice(int nlig, int ncol);
@@ -33,5 +36,6 @@ class Matrice {
 };
 
 Matrice operator*(const Matrice& A, const Matrice& B);
+Matrice operator/(const Matrice& A, const Matrice &B);
 ostream& operator<<( ostream& str, const Matrice& A);
 Matrice transpose(Matrice A);
