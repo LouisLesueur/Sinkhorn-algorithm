@@ -1,4 +1,5 @@
 #include "pi.h"
+#include "matrice.h"
 #include <vector>
 #include <cmath>
 using namespace std;
@@ -62,22 +63,52 @@ simplex pi::second_marginal(){
 pi W(simplex s1, simplex s2, double eps, int n_iter){
 	int m = s1.length();
 	// Initialising
-	vector<double> p1;
-	vector<double> p2;
-	vector<double> ksi;
-	vector<double> v;
-	vector<double> u;
+	Matrice ksi(m);
 	for(int i=0; i<m; i++){
-		p1.push_back(s1(i));
-		p2.push_back(s2(i));
-		double dis = pow((s1(i) - s2(i)), 2);
-		ksi.push_back(exp(-dis/eps));
-		v.push_back(1.);
-		u.push_back(p1[i]/(ksi[i]*v[i]));
+		for(int j=0; j<m; j++){
+			double dis = pow((s1(i) - s2(j)), 2);
+			ksi(i,j) = dis;	
+		}
 	}
+	Matrice p1(m, 1);
+	Matrice p2(m, 1);
+	Matrice v(m, 1);
+	for(int i=0; i<m; i++){
+		p1(i,1) = s1(i);
+		p2(i,1) = s2(i);
+		v(i,1) = 1;
+	}
+	Matrice u(m, 1);
+	Matrice prod(ksi*v);
+	for(int i=0; i<m; i++){
+		u(i,1) = p1(i,1)/prod(i,1);
+	}
+	// Using recursion formula,
 	for(int i=0; i<n_iter; i++){
-		v = p2*(1/scalar(ksi, u));
-		u = p1/(ksi*v);	
+		Matrice prod1(transpose(ksi)*u);
+		v = p2/prod1;
+		Matrice prod2(ksi*v);
+		u = p1/prod2;
 	}
+	// Creating diag matrix
+	Matrice diag1(m);
+	Matrice diag2(m);
+	for(int i=0; i<m; i++){
+		for(int j=0; j<m; j++){
+			if(i==j){
+				diag1(i,j) = u(i,1);
+				diag2(i,j) = v(i,1);
+			}
+		}
+	}
+	Matrice final_prod(diag1*ksi*diag2);
+	pi pi(m);
+	for(int i=0; i<m; i++){
+		for(int j=0; j<m; j++){
+			pi(i,j) = final_prod(i,j);
+		}
+	}
+	return pi;
+
 }
 
