@@ -94,7 +94,7 @@ Matrice transpose(Matrice A){
 }
 
 
-Matrice operator/(Matrice A, Matrice B){
+Matrice operator/(Matrice& A, Matrice& B){
 	Matrice C(A.nlignes(), A.ncolonnes());
 	for(int i=0; i<A.nlignes(); i++){
 		for(int j=0; j<A.ncolonnes(); j++)
