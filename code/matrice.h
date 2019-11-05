@@ -1,9 +1,6 @@
 #pragma once
 #include <cassert>
 #include <iostream>
-#include <ctime>
-#include <vector>
-
 
 using namespace std;
 
@@ -13,7 +10,7 @@ class Matrice {
     private:
         //m lig et n col
         int m,n;
-	vector<double>* tab;
+	double* tab;
         int* compteur;
 
     public:
