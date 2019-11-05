@@ -1,5 +1,7 @@
 #include "pi.h"
-
+#include <vector>
+#include <cmath>
+using namespace std;
 //===================================CLASSE PI=========================
 
 //-------------------------CONSTRUCTEUR--------------------------------
@@ -56,3 +58,26 @@ simplex pi::second_marginal(){
 }
 
 //====================================================================
+
+pi W(simplex s1, simplex s2, double eps, int n_iter){
+	int m = s1.length();
+	// Initialising
+	vector<double> p1;
+	vector<double> p2;
+	vector<double> ksi;
+	vector<double> v;
+	vector<double> u;
+	for(int i=0; i<m; i++){
+		p1.push_back(s1(i));
+		p2.push_back(s2(i));
+		double dis = pow((s1(i) - s2(i)), 2);
+		ksi.push_back(exp(-dis/eps));
+		v.push_back(1.);
+		u.push_back(p1[i]/(ksi[i]*v[i]));
+	}
+	for(int i=0; i<n_iter; i++){
+		v = p2*(1/scalar(ksi, u));
+		u = p1/(ksi*v);	
+	}
+}
+

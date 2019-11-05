@@ -1,6 +1,7 @@
 #pragma once
 #include "simplex.h"
-
+#include<vector>
+using namespace std;
 class pi{
 	private:
 		int size;
@@ -22,7 +23,38 @@ class pi{
 		~pi(){delete [] tab;}
 };
 
+vector<double> operator*(vector<double> p1, vector<double> p2){
+	vector<double> q;
+	for(int i=0; i<p1.size(); i++){
+		q.push_back(p1[i]*p2[i]);
+	}
+	return q;
+}
 
-//À coder !
-//On considère que le xi du papier = 1
+
+vector<double> operator/(vector<double> p1, vector<double> p2){
+	vector<double> q;
+	for(int i=0; i<p1.size(); i++){
+		q.push_back(p1[i]/p2[i]);
+	}
+	return q;
+}
+
+
+vector<double> operator*(vector<double> p1, double lam){
+	vector<double> q;
+	for(int i=0; i<p1.size(); i++){
+		q.push_back(p1[i]*lam);
+	}
+	return q;
+}
+
+
+double scalar(vector<double> ksi, vector<double> u){
+	double sca = 0;
+	for(int i=0; i<ksi.size(); i++){
+		sca += ksi[i] * u[i];
+	}
+	return sca;
+}
 double W(double eps, pi p);
