@@ -74,14 +74,14 @@ pi W(simplex s1, simplex s2, double eps, int n_iter){
 	Matrice p2(m, 1);
 	Matrice v(m, 1);
 	for(int i=0; i<m; i++){
-		p1(i,1) = s1(i);
-		p2(i,1) = s2(i);
-		v(i,1) = 1;
+		p1(i,0) = s1(i);
+		p2(i,0) = s2(i);
+		v(i,0) = 1;
 	}
 	Matrice u(m, 1);
 	Matrice prod(ksi*v);
 	for(int i=0; i<m; i++){
-		u(i,1) = p1(i,1)/prod(i,1);
+		u(i,0) = p1(i,0)/prod(i,0);
 	}
 	// Using recursion formula,
 	for(int i=0; i<n_iter; i++){
@@ -96,8 +96,8 @@ pi W(simplex s1, simplex s2, double eps, int n_iter){
 	for(int i=0; i<m; i++){
 		for(int j=0; j<m; j++){
 			if(i==j){
-				diag1(i,j) = u(i,1);
-				diag2(i,j) = v(i,1);
+				diag1(i,j) = u(i,0);
+				diag2(i,j) = v(i,0);
 			}
 		}
 	}

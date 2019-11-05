@@ -97,7 +97,9 @@ Matrice transpose(Matrice A){
 Matrice operator/(const Matrice& A, const Matrice& B){
 	Matrice C(A.nlignes(), A.ncolonnes());
 	for(int i=0; i<A.nlignes(); i++){
-		for(int j=0; j<A.ncolonnes(); j++)
+		for(int j=0; j<A.ncolonnes(); j++){
 			C(i,j)=A(i,j)/B(i,j);
+		}
 	}
+	return C;
 }
