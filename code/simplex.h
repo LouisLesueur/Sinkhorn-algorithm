@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <fstream>
 #include <ctime>
 #include <cmath>
 #include <cstdlib>
@@ -15,21 +16,24 @@ class simplex{
 	private:
 		double* tab;
 		int size;
+		char id;
 	public:
 		//constructeur vide, nécessaire pour pi
-		simplex(){};
+        simplex(){}
 		//Pour générer un simplexe de taille n
-		simplex(int n);
+		simplex(int n, char ID='0');
 		//pour construire un simplexe à partir d'un tableau
-		simplex(double values[], int n);
+		simplex(double values[], int n, char ID='0');
 		//Pour récupérer la taille du simplexe
 		int length() const{return size;};
+		//To save in a csv file
+		void plot();
 
 		//Pour accèder à un élément du simplexe
 		double operator()(int i) const;
 		double& operator()(int i);
 
-		~simplex(){delete [] tab;}
+        ~simplex(){std::cout<<id<<std::endl; delete [] tab;}
 
 };
 

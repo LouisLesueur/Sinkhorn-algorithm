@@ -4,7 +4,8 @@
 //======================CLASSE SIMPLEXE=======================
 
 //---------------------CONSTRUCTEURS----------------------------
-simplex::simplex(int n){
+simplex::simplex(int n, char ID){
+	id = ID;
 	size = n;
 	tab = new double[n];
 	double sum = 0;
@@ -16,7 +17,8 @@ simplex::simplex(int n){
 		tab[i] /= sum;
 }
 
-simplex::simplex(double values[], int n){
+simplex::simplex(double values[], int n, char ID){
+	id = ID;
 	double sum = 0;
 	size = n;
 	tab = new double[n];
@@ -47,6 +49,17 @@ std::ostream& operator<<(std::ostream& str, const simplex& s){
 }
 
 //======================================================
+
+void simplex::plot(){
+	std:: string name = "simplex";
+	name += id;
+	name += ".csv";
+	std::ofstream monFlux(name.c_str());
+	for(int i=0; i<size; i++)
+		monFlux<<i<<" "<<tab[i]<<std::endl;
+}
+
+
 
 //========================ALEA=======================
 void InitRandom(){srand((unsigned int)time(0));}

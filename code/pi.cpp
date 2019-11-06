@@ -44,7 +44,7 @@ simplex pi::first_marginal(){
 			sum += tab[i+size*j];
 		marg[i] = sum;
 	}
-	return simplex(marg, size);
+	return simplex(marg, size, '1');
 }
 
 simplex pi::second_marginal(){
@@ -55,12 +55,24 @@ simplex pi::second_marginal(){
 			sum += tab[i+size*j];
 		marg[j] = sum;
 	}
-	return simplex(marg, size);
+	return simplex(marg, size, '2');
 }
 
 //====================================================================
 
-pi W(simplex s1, simplex s2, double eps, int n_iter){
+void pi::plot(){
+	first_marginal().plot();
+	second_marginal().plot();
+	ofstream monFlux("pi.csv");
+	for(int i=0; i<size; i++){
+		for(int j=0; j<size; j++)
+			monFlux<<" "<<tab[i+size*j];
+		monFlux<<endl;
+	}
+}
+
+
+pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 	int m = s1.length();
 	// Initialising
 	Matrice ksi(m);
