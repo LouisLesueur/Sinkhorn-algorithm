@@ -36,7 +36,7 @@ int main()
 		cout << "Second simplexe    = " << s2 << endl;
 		cout << "Seconde marginale  =" << gamma.second_marginal() << endl;
 	}
-	bool show_matrix = true;
+	bool show_matrix = false;
 	if(show_matrix){
 		Matrice M(2*range+1);
 		for(int i=0; i<2*range+1; i++){
