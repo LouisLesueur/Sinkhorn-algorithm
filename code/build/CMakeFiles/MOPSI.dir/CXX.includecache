@@ -18,35 +18,17 @@ cmath
 iostream
 -
 
-/home/lotophagos/Documents/ENPC/MOPSI/code/matrice.cpp
-matrice.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/matrice.h
-
 /home/lotophagos/Documents/ENPC/MOPSI/code/matrice.h
 cassert
 -
 iostream
 -
 
-/home/lotophagos/Documents/ENPC/MOPSI/code/pi.cpp
-pi.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/pi.h
-matrice.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/matrice.h
-vector
--
-cmath
--
-
 /home/lotophagos/Documents/ENPC/MOPSI/code/pi.h
 simplex.h
 /home/lotophagos/Documents/ENPC/MOPSI/code/simplex.h
 vector
 -
-
-/home/lotophagos/Documents/ENPC/MOPSI/code/simplex.cpp
-simplex.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/simplex.h
 
 /home/lotophagos/Documents/ENPC/MOPSI/code/simplex.h
 iostream
