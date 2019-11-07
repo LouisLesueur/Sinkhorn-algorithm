@@ -2,7 +2,7 @@
 
 rm *.png
 
-./build/MOPSI
+./build/MOPSI 100 0.003
 
 gnuplot plot.gnu
 

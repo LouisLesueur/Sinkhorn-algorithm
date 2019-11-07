@@ -10,7 +10,7 @@ double gaussian(double x, double sigma, double mu){
 }
 
 
-int main()
+int main(int argc, char *argv[])
 {	
 	InitRandom();	
 	int range = 10; // On prend des valeurs de gaussiennes pour des x allant de -range à range
@@ -25,8 +25,8 @@ int main()
 	}
 	simplex s1(values1, 2*range + 1);
 	simplex s2(values2, 2*range + 1);
-	int n_iter = 100;
-	double eps = 30/n_iter;
+	int n_iter = strtol(argv[1], nullptr, 0);;
+	double eps = strtol(argv[2], nullptr, 0);;
 	pi gamma = W(s1, s2, eps, n_iter);
 
 	bool show_marginals = false;
