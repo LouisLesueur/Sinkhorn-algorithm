@@ -20,11 +20,11 @@ int main(int argc, char *argv[])
 	double sigma = 1;
 	for(int i=0; i<2*range+1; i++){
 		double x = (double) i-range;
-		values1[i] = gaussian(x,sigma,mu);
+		values1[i] = gaussian(x, sigma, mu);
 		values2[i] = gaussian(x,sigma,-mu);
 	}
 	simplex s1(values1, 2*range + 1, '1');
-	simplex s2(values2, 2*range + 1, '2');
+	simplex s2(values1, 2*range + 1, '2');
 	int n_iter = strtol(argv[1], nullptr, 0);;
 	double eps = strtol(argv[2], nullptr, 0);;
 	pi gamma = W(s1, s2, eps, n_iter);
