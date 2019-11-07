@@ -1,0 +1,5 @@
+- A priori on a effectué de calcul de W(p1,p2) en utilisant l'algorithme de sinkhorn.
+- Le ksi défini dans l'algorithme de sinkhorn n'est pas du tout ksi(i,j) = 1 ou ksi(i,j) = p1(i)p2(j)
+- Dans le calcul de W, on trouve systématiquement une matrice minisante l'expression ayant pour marginales p1 et p2: content.
+- Cependant, comment vérifier que l'algorithme nous renvoie bien la bonne valeur ?
+

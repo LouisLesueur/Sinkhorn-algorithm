@@ -1,5 +1,6 @@
 #include "simplex.h"
 #include "pi.h"
+#include "matrice.h"
 #include <cmath>
 #include <iostream>
 using namespace std;
@@ -28,12 +29,22 @@ int main()
 	double eps = 30/n_iter;
 	pi gamma = W(s1, s2, eps, n_iter);
 
-	bool show_marginals = true;
+	bool show_marginals = false;
 	if(show_marginals){
 		cout << "Premier simplexe   = " << s1 << endl;
 		cout << "Première marginale =" << gamma.first_marginal() << endl;
 		cout << "Second simplexe    = " << s2 << endl;
 		cout << "Seconde marginale  =" << gamma.second_marginal() << endl;
+	}
+	bool show_matrix = true;
+	if(show_matrix){
+		Matrice M(2*range+1);
+		for(int i=0; i<2*range+1; i++){
+			for(int j=0; j<2*range+1; j++){
+				M(i,j) = gamma(i,j);
+			}
+		}
+		cout << "Matrice minimisante = " << M << endl;
 	}
 	gamma.plot();
 
