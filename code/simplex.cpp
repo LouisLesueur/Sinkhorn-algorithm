@@ -26,7 +26,6 @@ simplex::simplex(double values[], int n, char ID){
 		sum += values[i];
 		tab[i] = values[i];
 	}
-	std::cout<<sum<<std::endl;
 }
 
 //--------------------OPERATEURS----------------------------

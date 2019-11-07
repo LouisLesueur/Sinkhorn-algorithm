@@ -33,7 +33,7 @@ class simplex{
 		double operator()(int i) const;
 		double& operator()(int i);
 
-        ~simplex(){std::cout<<id<<std::endl; delete [] tab;}
+        ~simplex(){delete [] tab;}
 
 };
 
