@@ -98,8 +98,13 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 	// Using recursion formula,
 	for(int i=0; i<n_iter; i++){
 		Matrice prod1(transpose(ksi)*u);
-		v = p2/prod1;
+		for(int i=0; i<m; i++){
+			v(i,0) = p2(i,0)/prod1(i,0);
+		}
 		Matrice prod2(ksi*v);
+		for(int i=0; i<m; i++){
+			u(i,0) = p1(i,0)/prod2(i,0);
+		}
 		u = p1/prod2;
 	}
 	// Creating diag matrix
@@ -110,6 +115,10 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 			if(i==j){
 				diag1(i,j) = u(i,0);
 				diag2(i,j) = v(i,0);
+			}
+			else{
+				diag1(i,j) = 0;
+				diag2(i,j) = 0;
 			}
 		}
 	}

@@ -20,11 +20,13 @@ simplex::simplex(int n, char ID){
 simplex::simplex(double values[], int n, char ID){
 	id = ID;
 	double sum = 0;
+	for(int i=0; i<n; i++){
+		sum += values[i];
+	}
 	size = n;
 	tab = new double[n];
 	for(int i=0; i<n; i++){
-		sum += values[i];
-		tab[i] = values[i];
+		tab[i] = values[i]/sum;
 	}
 }
 
