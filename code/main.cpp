@@ -12,22 +12,20 @@ double gaussian(double x, double sigma, double mu){
 
 int main(int argc, char *argv[])
 {	
-	InitRandom();	
-	int range = 10; // On prend des valeurs de gaussiennes pour des x allant de -range à range
-	double values1[2*range+1];
-	double values2[2*range+1];
-	double mu = 5;
-	double sigma = 1;
-	for(int i=0; i<2*range+1; i++){
-		double x = (double) i-range;
-		values1[i] = gaussian(x, sigma, mu);
-		values2[i] = gaussian(x,sigma,-mu);
-	}
-	simplex s1(values1, 2*range + 1, '1');
-	simplex s2(values1, 2*range + 1, '2');
+	InitRandom();
+	const int N = 100; // Intervale [0,1] divisé en 100
+	double values[N];
+	for(int i=0; i<N; i++)
+		values[i] = i;
+	simplex s1(values, N, '1');
+	simplex s2(values, N, '2');
+	cout << s1 << endl;
 	int n_iter = strtol(argv[1], nullptr, 0);;
-	double eps = strtol(argv[2], nullptr, 0);;
-	pi gamma = W(s1, s2, eps, n_iter);
+	cout << "n_iter=" << n_iter << endl;
+	double eps = strtol(argv[2], nullptr, 0);; // Pour des valeurs de argv[2]<1, eps=0 !
+	cout << "eps=" << eps << endl;
+	eps = 0.1;
+      	pi gamma = W(s1, s2, eps, n_iter);
 
 	bool show_marginals = false;
 	if(show_marginals){
@@ -38,9 +36,10 @@ int main(int argc, char *argv[])
 	}
 	bool show_matrix = false;
 	if(show_matrix){
-		Matrice M(2*range+1);
-		for(int i=0; i<2*range+1; i++){
-			for(int j=0; j<2*range+1; j++){
+		Matrice M(N);
+		for(int i=0; i<N; i++){
+			for(int j=0; j<N; j++){
+				cout << i << " " << j << " " << gamma(i,j) << endl;
 				M(i,j) = gamma(i,j);
 			}
 		}
@@ -49,6 +48,5 @@ int main(int argc, char *argv[])
 	s1.plot();
 	s2.plot();
 	gamma.plot();
-
 	return 0;
 }

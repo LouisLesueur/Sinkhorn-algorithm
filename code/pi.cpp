@@ -77,9 +77,10 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 	for(int i=0; i<m; i++){
 		for(int j=0; j<m; j++){
 			double dis = pow((s1(i) - s2(j)), 2);
-			ksi(i,j) = dis;	
+			ksi(i,j) = exp(-dis/eps);
 		}
 	}
+	cout << "ksi=" << ksi << endl;
 	Matrice p1(m, 1);
 	Matrice p2(m, 1);
 	Matrice v(m, 1);
@@ -103,7 +104,6 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 		for(int i=0; i<m; i++){
 			u(i,0) = p1(i,0)/prod2(i,0);
 		}
-		u = p1/prod2;
 	}
 	// Creating diag matrix
 	Matrice diag1(m);
@@ -121,13 +121,11 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 		}
 	}
 	Matrice final_prod(diag1*ksi*diag2);
-	pi pi(m);
+	pi gamma(m);
 	for(int i=0; i<m; i++){
 		for(int j=0; j<m; j++){
-			pi(i,j) = final_prod(i,j);
+			gamma(i,j) = final_prod(i,j);
 		}
 	}
-	return pi;
-
+	return gamma;
 }
-
