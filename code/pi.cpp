@@ -80,7 +80,6 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 			ksi(i,j) = exp(-dis/eps);
 		}
 	}
-	cout << "ksi=" << ksi << endl;
 	Matrice p1(m, 1);
 	Matrice p2(m, 1);
 	Matrice v(m, 1);
@@ -95,16 +94,17 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 		u(i,0) = p1(i,0)/prod(i,0);
 	}
 	// Using recursion formula,
-	for(int i=0; i<n_iter; i++){
-		Matrice prod1(transpose(ksi)*u);
-		for(int i=0; i<m; i++){
-			v(i,0) = p2(i,0)/prod1(i,0);
-		}
+	for(int i=0; i<n_iter-1; i++){
 		Matrice prod2(ksi*v);
-		for(int i=0; i<m; i++){
+		for(int i=0; i<m; i++)
 			u(i,0) = p1(i,0)/prod2(i,0);
-		}
+		Matrice prod1(transpose(ksi)*u);
+		for(int i=0; i<m; i++)
+			v(i,0) = p2(i,0)/prod1(i,0);
+		cout << "v" << i << " = " << v << endl;
+		cout << "u" << i << " = " << u << endl;
 	}
+
 	// Creating diag matrix
 	Matrice diag1(m);
 	Matrice diag2(m);

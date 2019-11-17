@@ -13,18 +13,20 @@ double gaussian(double x, double sigma, double mu){
 int main(int argc, char *argv[])
 {	
 	InitRandom();
-	const int N = 100; // Intervale [0,1] divisé en 100
-	double values[N];
-	for(int i=0; i<N; i++)
-		values[i] = i;
-	simplex s1(values, N, '1');
-	simplex s2(values, N, '2');
-	cout << s1 << endl;
+	const int N = 5; // Intervale [0,1] divisé en 100
+	double values1[N];
+	double values2[N];
+	for(int i=0; i<N; i++){
+		values1[i] = 2*i;
+		values2[i] = 1;
+	}
+	simplex s1(values1, N, '1');
+	simplex s2(values2, N, '2');
 	int n_iter = strtol(argv[1], nullptr, 0);;
 	cout << "n_iter=" << n_iter << endl;
-	double eps = strtol(argv[2], nullptr, 0);; // Pour des valeurs de argv[2]<1, eps=0 !
+	//double eps = strtol(argv[2], nullptr, 0);; // Pour des valeurs de argv[2]<1, eps=0 !
+	double eps = 0.1;
 	cout << "eps=" << eps << endl;
-	eps = 0.1;
       	pi gamma = W(s1, s2, eps, n_iter);
 
 	bool show_marginals = false;
