@@ -76,7 +76,9 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 	Matrice ksi(m);
 	for(int i=0; i<m; i++){
 		for(int j=0; j<m; j++){
-			double dis = pow((s1(i) - s2(j)), 2);
+			double x_i = (i+1/2)/m;
+			double x_j = (j+1/2)/m;
+			double dis = pow(x_i - x_j, 2);
 			ksi(i,j) = exp(-dis/eps);
 		}
 	}

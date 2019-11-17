@@ -13,11 +13,11 @@ double gaussian(double x, double sigma, double mu){
 int main(int argc, char *argv[])
 {	
 	InitRandom();
-	const int N = 5; // Intervale [0,1] divisé en 100
+	const int N = 5; // Intervale [0,1] divisé en N
 	double values1[N];
 	double values2[N];
 	for(int i=0; i<N; i++){
-		values1[i] = 2*i;
+		values1[i] = 2*i/N;
 		values2[i] = 1;
 	}
 	simplex s1(values1, N, '1');
