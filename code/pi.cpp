@@ -70,14 +70,28 @@ void pi::plot(){
 }
 
 
+Matrice div(const Matrice a, const Matrice b){
+	int n = a.nlignes();
+	int m = a.ncolonnes();
+	Matrice c(n,m);
+	for(int i=0; i<n; i++){
+		for(int j=0; j<m; j++){
+			if(b(i,j) == 0)
+				cout << "Division par 0 !" << endl;
+			c(i,j) = a(i,j)/b(i,j);
+		}
+	}
+	return c;
+}
+
 pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 	int m = s1.length();
 	// Initialising
 	Matrice ksi(m);
 	for(int i=0; i<m; i++){
 		for(int j=0; j<m; j++){
-			double x_i = (i+1/2)/m;
-			double x_j = (j+1/2)/m;
+			double x_i = ((double)i+1/2)/m;
+			double x_j = ((double)j+1/2)/m;
 			double dis = pow(x_i - x_j, 2);
 			ksi(i,j) = exp(-dis/eps);
 		}
@@ -90,24 +104,19 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 		p2(i,0) = s2(i);
 		v(i,0) = 1;
 	}
-	Matrice u(m, 1);
-	Matrice prod(ksi*v);
-	for(int i=0; i<m; i++){
-		u(i,0) = p1(i,0)/prod(i,0);
-	}
+	cout << "v0 = " << v << endl;
 	// Using recursion formula,
-	for(int i=0; i<n_iter-1; i++){
-		Matrice prod2(ksi*v);
-		for(int i=0; i<m; i++)
-			u(i,0) = p1(i,0)/prod2(i,0);
-		Matrice prod1(transpose(ksi)*u);
-		for(int i=0; i<m; i++)
-			v(i,0) = p2(i,0)/prod1(i,0);
-		cout << "v" << i << " = " << v << endl;
-		cout << "u" << i << " = " << u << endl;
+	for(int i=0; i<n_iter; i++){
+		v = div(p2, transpose(ksi)*div(p1, ksi*v));
+		cout << "v" << i+1 << " = " << v << endl;
 	}
 
 	// Creating diag matrix
+	Matrice u(m, 1);
+	Matrice prod(ksi*v);
+	u = div(p1, ksi*v);
+	cout << "v = " << v << endl;
+	cout << "u = " << u << endl;
 	Matrice diag1(m);
 	Matrice diag2(m);
 	for(int i=0; i<m; i++){
