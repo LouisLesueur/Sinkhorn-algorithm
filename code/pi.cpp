@@ -113,7 +113,6 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 
 	// Creating diag matrix
 	Matrice u(m, 1);
-	Matrice prod(ksi*v);
 	u = div(p1, ksi*v);
 	cout << "v = " << v << endl;
 	cout << "u = " << u << endl;
