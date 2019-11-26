@@ -13,7 +13,7 @@ double gaussian(double x, double sigma, double mu){
 int main(int argc, char *argv[])
 {	
 	InitRandom();
-	const int N = 100; // Intervale [0,1] divisé en N
+	const int N = 200; // Intervale [0,1] divisé en N
 	double values1[N];
 	double values2[N];
 	for(int i=0; i<N; i++){

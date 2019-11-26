@@ -24,6 +24,8 @@ class Matrice {
 	Matrice operator*(double k);
 	Matrice operator/(double k);
 
+	Matrice &operator=(const Matrice &);
+
         //Constructeurs/destructeur
         Matrice(int nligcol);
         Matrice(int nlig, int ncol);

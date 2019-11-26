@@ -24,6 +24,16 @@ Matrice Matrice::operator/(double k){
 	for(int i=0; i<n*m; i++)
 		tab[i]/=k;
 }
+
+Matrice &Matrice::operator=(const Matrice &source){
+	compteur=source.compteur;
+	*compteur+=1;
+	m=source.m; n=source.n;
+	tab = source.tab;
+	return *this;
+
+}
+
 /*------------------Constructeurs------------------*/
 
 Matrice::Matrice(int nligcol){

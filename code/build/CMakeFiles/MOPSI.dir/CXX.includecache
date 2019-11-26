@@ -24,16 +24,6 @@ cassert
 iostream
 -
 
-/home/lotophagos/Documents/ENPC/MOPSI/code/pi.cpp
-pi.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/pi.h
-matrice.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/matrice.h
-vector
--
-cmath
--
-
 /home/lotophagos/Documents/ENPC/MOPSI/code/pi.h
 simplex.h
 /home/lotophagos/Documents/ENPC/MOPSI/code/simplex.h
