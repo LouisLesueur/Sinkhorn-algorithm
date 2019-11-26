@@ -6,4 +6,4 @@ rm *.png
 ./build/MOPSI $1
 gnuplot plot.gnu
 
-#rm *.csv
+rm *.csv
