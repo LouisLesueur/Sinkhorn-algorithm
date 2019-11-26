@@ -6,49 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/home/zelire/Documents/IMI/MOPSI/code/main.cpp
+/home/lotophagos/Documents/ENPC/MOPSI/code/main.cpp
 simplex.h
-/home/zelire/Documents/IMI/MOPSI/code/simplex.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/simplex.h
 pi.h
-/home/zelire/Documents/IMI/MOPSI/code/pi.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/pi.h
 matrice.h
-/home/zelire/Documents/IMI/MOPSI/code/matrice.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/matrice.h
 cmath
 -
 iostream
 -
 
-/home/zelire/Documents/IMI/MOPSI/code/matrice.cpp
-matrice.h
-/home/zelire/Documents/IMI/MOPSI/code/matrice.h
-
-/home/zelire/Documents/IMI/MOPSI/code/matrice.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/matrice.h
 cassert
 -
 iostream
 -
 
-/home/zelire/Documents/IMI/MOPSI/code/pi.cpp
+/home/lotophagos/Documents/ENPC/MOPSI/code/pi.cpp
 pi.h
-/home/zelire/Documents/IMI/MOPSI/code/pi.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/pi.h
 matrice.h
-/home/zelire/Documents/IMI/MOPSI/code/matrice.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/matrice.h
 vector
 -
 cmath
 -
 
-/home/zelire/Documents/IMI/MOPSI/code/pi.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/pi.h
 simplex.h
-/home/zelire/Documents/IMI/MOPSI/code/simplex.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/simplex.h
 vector
 -
 
-/home/zelire/Documents/IMI/MOPSI/code/simplex.cpp
-simplex.h
-/home/zelire/Documents/IMI/MOPSI/code/simplex.h
-
-/home/zelire/Documents/IMI/MOPSI/code/simplex.h
+/home/lotophagos/Documents/ENPC/MOPSI/code/simplex.h
 iostream
 -
 fstream

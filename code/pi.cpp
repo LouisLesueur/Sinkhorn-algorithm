@@ -64,7 +64,7 @@ void pi::plot(){
 	ofstream monFlux("pi.csv");
 	for(int i=0; i<size; i++){
 		for(int j=0; j<size; j++)
-			monFlux<<" "<<tab[i+size*j];
+			monFlux<<" "<<double(tab[i+size*j]);
 		monFlux<<endl;
 	}
 }
