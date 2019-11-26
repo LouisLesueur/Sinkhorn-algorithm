@@ -104,18 +104,14 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 		p2(i,0) = s2(i);
 		v(i,0) = 1;
 	}
-	cout << "v0 = " << v << endl;
 	// Using recursion formula,
 	for(int i=0; i<n_iter; i++){
 		v = div(p2, transpose(ksi)*div(p1, ksi*v));
-		cout << "v" << i+1 << " = " << v << endl;
 	}
 
 	// Creating diag matrix
 	Matrice u(m, 1);
 	u = div(p1, ksi*v);
-	cout << "v = " << v << endl;
-	cout << "u = " << u << endl;
 	Matrice diag1(m);
 	Matrice diag2(m);
 	for(int i=0; i<m; i++){

@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MOPSI.dir/main.cpp.o"
-  "CMakeFiles/MOPSI.dir/matrice.cpp.o"
-  "CMakeFiles/MOPSI.dir/pi.cpp.o"
   "CMakeFiles/MOPSI.dir/simplex.cpp.o"
-  "MOPSI"
+  "CMakeFiles/MOPSI.dir/pi.cpp.o"
+  "CMakeFiles/MOPSI.dir/matrice.cpp.o"
   "MOPSI.pdb"
+  "MOPSI"
 )
 
 # Per-language clean rules from dependency scanning.

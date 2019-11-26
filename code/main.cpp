@@ -22,8 +22,6 @@ int main(int argc, char *argv[])
 	}
 	simplex s1(values1, N, '1');
 	simplex s2(values2, N, '2');
-	cout << "p1 = " << s1 << endl;
-	cout << "p2 = " << s2 << endl;
 	int n_iter = strtol(argv[1], nullptr, 0);;
 	cout << "n_iter=" << n_iter << endl;
 	//double eps = (double) strtol(argv[2], nullptr, 0);;
