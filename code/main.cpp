@@ -13,7 +13,7 @@ double gaussian(double x, double sigma, double mu){
 int main(int argc, char *argv[])
 {	
 	InitRandom();
-	const int N = 200; // Intervale [0,1] divisé en N
+	int N = strtol(argv[1], nullptr, 0);;
 	double values1[N];
 	double values2[N];
 	for(int i=0; i<N; i++){
@@ -22,10 +22,10 @@ int main(int argc, char *argv[])
 	}
 	simplex s1(values1, N, '1');
 	simplex s2(values2, N, '2');
-	int n_iter = strtol(argv[1], nullptr, 0);;
+	int n_iter = strtol(argv[2], nullptr, 0);;
 	cout << "n_iter=" << n_iter << endl;
 	//double eps = (double) strtol(argv[2], nullptr, 0);;
-	double eps = 1/((double)3*n_iter);
+	double eps = 1/((double)3*N);
 	cout << "eps=" << eps << endl;
       	pi gamma = W(s1, s2, eps, n_iter);
 	s1.plot();
