@@ -135,3 +135,31 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 	}
 	return gamma;
 }
+
+simplex bar(const simplex & s1, const simplex & s2, double lambda1, double lambda2, double eps, int n_iter){
+	int m = s1.length();
+	// Initialising
+	Matrice ksi(m);
+	for(int i=0; i<m; i++){
+		for(int j=0; j<m; j++){
+			double x_i = ((double)i+1/2)/m;
+			double x_j = ((double)j+1/2)/m;
+			double dis = pow(x_i - x_j, 2);
+			ksi(i,j) = exp(-dis/eps);
+		}
+	}
+	Matrice p1(m, 1);
+	Matrice p2(m, 1);
+	Matrice v1(m, 1);
+	Matrice v2(m, 1);
+	for(int i=0; i<m; i++){
+		p1(i, 0) = s1(i);
+		p2(i, 0) = s2(i);
+		v1(i, 0) = 1;
+		v2(i, 0) = 1;
+	}
+	for(int i=0; i<n_iter; i++){
+		
+	}
+
+}

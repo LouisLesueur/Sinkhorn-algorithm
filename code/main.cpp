@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	int n_iter = strtol(argv[2], nullptr, 0);;
 	cout << "n_iter=" << n_iter << endl;
 	//double eps = (double) strtol(argv[2], nullptr, 0);;
-	double eps = 1/((double)3*N);
+	double eps = 3/((double)N);
 	cout << "eps=" << eps << endl;
       	pi gamma = W(s1, s2, eps, n_iter);
 	s1.plot();
