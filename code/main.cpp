@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	s1.plot();
 	s2.plot();
 	gamma.plot();
-	double lambda = 0.5;
+	double lambda = 1.;
 	simplex barycenter = bar(s1, s2, lambda, eps, n_iter);
 	barycenter.plot();
 	return 0;

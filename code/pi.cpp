@@ -192,5 +192,9 @@ simplex bar(const simplex & s1, const simplex & s2, double lambda, double eps, i
 	for(int i=0; i<m; i++)
 		for(int j=0; j<m; j++)
 			gamma(i,j) = final_prod(i,j);
-	return gamma.first_marginal();
+	simplex first_marginal = gamma.first_marginal();
+	simplex barycentre(m, '3');
+	for(int i=0; i<m; i++)
+		barycentre(i) = first_marginal(i);
+	return barycentre;
 }
