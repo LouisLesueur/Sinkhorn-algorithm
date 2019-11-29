@@ -1,6 +1,7 @@
 #pragma once
 #include <cassert>
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -37,4 +38,6 @@ class Matrice {
 Matrice operator*(const Matrice& A, const Matrice& B);
 Matrice operator/(const Matrice& A, const Matrice& B);
 ostream& operator<<( ostream& str, const Matrice& A);
-Matrice transpose(Matrice A);
+Matrice transpose(const Matrice& A);
+Matrice matrix_pow(const Matrice& A, double lambda);
+Matrice product(const Matrice& A, const Matrice& B);

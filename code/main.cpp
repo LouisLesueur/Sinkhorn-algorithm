@@ -25,11 +25,14 @@ int main(int argc, char *argv[])
 	int n_iter = strtol(argv[2], nullptr, 0);;
 	cout << "n_iter=" << n_iter << endl;
 	//double eps = (double) strtol(argv[2], nullptr, 0);;
-	double eps = 3/((double)N);
+	double eps = 1/((double)3*N);
 	cout << "eps=" << eps << endl;
       	pi gamma = W(s1, s2, eps, n_iter);
 	s1.plot();
 	s2.plot();
 	gamma.plot();
+	double lambda = 0.5;
+	simplex barycenter = bar(s1, s2, lambda, eps, n_iter);
+	barycenter.plot();
 	return 0;
 }

@@ -136,7 +136,7 @@ pi W(const simplex &s1, const simplex &s2, double eps, int n_iter){
 	return gamma;
 }
 
-simplex bar(const simplex & s1, const simplex & s2, double lambda1, double lambda2, double eps, int n_iter){
+simplex bar(const simplex & s1, const simplex & s2, double lambda, double eps, int n_iter){
 	int m = s1.length();
 	// Initialising
 	Matrice ksi(m);
@@ -152,14 +152,45 @@ simplex bar(const simplex & s1, const simplex & s2, double lambda1, double lambd
 	Matrice p2(m, 1);
 	Matrice v1(m, 1);
 	Matrice v2(m, 1);
-	for(int i=0; i<m; i++){
+	Matrice u1(m, 1);
+	Matrice u2(m, 1);
+	for(int i=0; i<m; i++){ // ukn and vkn
 		p1(i, 0) = s1(i);
 		p2(i, 0) = s2(i);
 		v1(i, 0) = 1;
 		v2(i, 0) = 1;
+		u1(i, 0) = 1;
+		u2(i, 0) = 1;
 	}
 	for(int i=0; i<n_iter; i++){
-		
+		// Computing vk(n+1)
+		v1 = div(p1, transpose(ksi)*u1);
+		v2 = div(p1, transpose(ksi)*u2);
+		// Computing p(n+1)
+		Matrice p = product(matrix_pow(product(u1, ksi*v1), lambda), matrix_pow(product(u2, ksi*v2), 1-lambda));
+		// Computing uk(n+1)
+		u1 = div(p, ksi*v1);
+		u2 = div(p, ksi*v2);
 	}
-
+	// Computing the first projection matrix
+	Matrice diag1(m);
+	Matrice diag2(m);
+	for(int i=0; i<m; i++){
+		for(int j=0; j<m; j++){
+			if(i==j){
+				diag1(i,j) = u1(i,0);
+				diag2(i,j) = v1(i,0);
+			}
+			else{
+				diag1(i,j) = 0;
+				diag2(i,j) = 0;
+			}
+		}
+	}
+	Matrice final_prod(diag1*ksi*diag2);
+	pi gamma(m);
+	for(int i=0; i<m; i++)
+		for(int j=0; j<m; j++)
+			gamma(i,j) = final_prod(i,j);
+	return gamma.first_marginal();
 }

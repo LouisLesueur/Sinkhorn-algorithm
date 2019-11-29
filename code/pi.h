@@ -26,3 +26,4 @@ class pi{
 };
 
 pi W(const simplex &s1, const simplex &s2, double eps, int n_iter);
+simplex bar(const simplex & s1, const simplex & s2, double lambda, double eps, int n_iter);

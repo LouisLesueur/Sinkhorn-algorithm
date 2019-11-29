@@ -94,7 +94,7 @@ ostream& operator<<( ostream& str, const Matrice& A) {
     return str;
 }
 
-Matrice transpose(Matrice A){
+Matrice transpose(const Matrice& A){
 	Matrice B(A.ncolonnes(), A.nlignes());
 	for(int i=0; i<A.nlignes(); i++){
 		for(int j=0; j<A.ncolonnes(); j++)
@@ -103,7 +103,25 @@ Matrice transpose(Matrice A){
 	return B;
 }
 
+Matrice matrix_pow(const Matrice& A, double lambda){
+	Matrice C(A.nlignes(), A.ncolonnes());
+	for(int i=0; i<A.nlignes(); i++){
+		for(int j=0; j<A.ncolonnes(); j++){
+			C(i,j) = pow(A(i,j), lambda);
+		}
+	}
+	return C;
+}
 
+Matrice product(const Matrice& A, const Matrice& B){
+	Matrice C(A.nlignes(), A.ncolonnes());
+		for(int i=0; i<A.nlignes(); i++){
+			for(int j=0; j<A.ncolonnes(); j++){
+				C(i,j) = A(i,j)*B(i,j);
+			}
+		}
+	return C;
+}
 Matrice operator/(const Matrice& A, const Matrice& B){
 	Matrice C(A.nlignes(), A.ncolonnes());
 	for(int i=0; i<A.nlignes(); i++){

@@ -27,6 +27,8 @@ cassert
 -
 iostream
 -
+cmath
+-
 
 /home/zelire/Documents/IMI/MOPSI/code/pi.cpp
 pi.h
