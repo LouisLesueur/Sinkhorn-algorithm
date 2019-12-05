@@ -17,6 +17,7 @@ simplex::simplex(int n, char ID){
 	}
 	for(int i=0; i<n; i++)
 		tab[i] /= sum;
+	constant = sum;
 }
 
 simplex::simplex(double values[], int n, char ID){
@@ -25,6 +26,7 @@ simplex::simplex(double values[], int n, char ID){
 	for(int i=0; i<n; i++){
 		sum += values[i];
 	}
+	constant = sum;
 	size = n;
 	width = n;
 	height = 1;
