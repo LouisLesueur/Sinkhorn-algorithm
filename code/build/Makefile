@@ -4,7 +4,7 @@ CFLAGS=-c -Wall
 all: MOPSI
 
 MOPSI: main.o pi.o simplex.o matrice.o
-	$(CC) -lX11 -lpthread main.o pi.o simplex.o matrice.o -o MOPSI
+	$(CC) main.o pi.o simplex.o matrice.o -o MOPSI -lX11 -lpthread
 
 main.o: ../source/main.cpp
 	$(CC) $(CFLAGS) ../source/main.cpp
