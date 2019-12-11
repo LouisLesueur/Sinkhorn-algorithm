@@ -1,6 +1,7 @@
 #pragma once
 #include "simplex.h"
 #include<vector>
+
 using namespace std;
 class pi{
 	private:
