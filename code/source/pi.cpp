@@ -3,6 +3,9 @@
 #include <vector>
 #include <cmath>
 using namespace std;
+
+MatrixXd m(2,2);
+
 //===================================CLASSE PI=========================
 
 //-------------------------CONSTRUCTEUR--------------------------------
