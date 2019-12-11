@@ -1,7 +1,11 @@
+#include <Eigen/Dense>
+#undef Success  
 #include "pi.h"
 #include "matrice.h"
 #include <vector>
 #include <cmath>
+
+using namespace Eigen;
 using namespace std;
 
 MatrixXd m(2,2);

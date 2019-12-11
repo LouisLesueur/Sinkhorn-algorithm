@@ -6,6 +6,20 @@
 + envoyer un mail pendant la semaine du 18 ( pour le 20/11 )
 + prochain rdv le 29/11 à 15h
 
+## Needed features
+
+This project uses Eigen. To compile it, just create a build directory in your computer:
+
+```
+cd ~
+git clone https://github.com/eigenteam/eigen-git-mirror
+sudo ln -s /usr/local/include ~/eigen-git-mirror/Eigen
+```
+
+and add the following line to your **.bashrc**
+```
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH$:~/eigen-git-mirror
+```
 ## Authors
 
 **Louis Hémadou** - student at the École Nationale des Ponts et Chaussées

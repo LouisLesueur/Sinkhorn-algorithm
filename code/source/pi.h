@@ -1,9 +1,7 @@
 #pragma once
 #include "simplex.h"
 #include<vector>
-#include <Eigen/Dense>
 
-using namespace Eigen;
 using namespace std;
 class pi{
 	private:
