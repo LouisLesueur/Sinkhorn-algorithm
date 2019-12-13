@@ -1,6 +1,5 @@
 #include "simplex.h"
 #include "pi.h"
-#include "matrice.h"
 #include <cmath>
 #include <iostream>
 using namespace std;
@@ -12,8 +11,8 @@ double gaussian(double x, double sigma, double mu){
 
 int main(int argc, char *argv[])
 {	
-	InitRandom();
-	/*int N = strtol(argv[1], nullptr, 0);;
+	/*InitRandom();
+	int N = strtol(argv[1], nullptr, 0);;
 	double values1[N];
 	double values2[N];
 	for(int i=0; i<N; i++){
