@@ -27,7 +27,7 @@ class simplex{
 		//Pour générer un simplexe de taille n
 		simplex(int n, char ID='0');
 		//pour construire un simplexe à partir d'un tableau
-		simplex(double values[], int n, char ID='0');
+		simplex(double values[], int n, int WIDTH, int HEIGHT, char ID='0');
 		//simplex à partir d'une image
 		simplex(const char* const path, char ID='0');
 		//Pour récupérer la taille du simplexe

@@ -20,7 +20,7 @@ simplex::simplex(int n, char ID){
 	constant = sum;
 }
 
-simplex::simplex(double values[], int n, char ID){
+simplex::simplex(double values[], int n, int WIDTH, int HEIGHT, char ID){
 	id = ID;
 	double sum = 0;
 	for(int i=0; i<n; i++){
@@ -28,8 +28,8 @@ simplex::simplex(double values[], int n, char ID){
 	}
 	constant = sum;
 	size = n;
-	width = n;
-	height = 1;
+	width = WIDTH;
+	height = HEIGHT;
 	tab = new double[n];
 	for(int i=0; i<n; i++){
 		tab[i] = values[i]/sum;
