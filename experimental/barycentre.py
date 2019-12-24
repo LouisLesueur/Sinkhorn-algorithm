@@ -61,7 +61,7 @@ def barycenter(p1, p2, lamb, eps, n_iter):
     bar2 = (lamb*p1.constant + (1-lamb)*p2.constant)*np.dot(gamma2, np.ones(m2))
     print(max(bar1))
     print(max(bar2))
-    return q1, q2, bar1, bar2
+    return q1, q2, bar1, bar2, p
 
 T0 = time.time()
 
@@ -71,10 +71,10 @@ CIRCLE = cv2.imread('./CIRCLE_32.png', 0)
 p1 = SimplexFromImage(SQUARE)
 p2 = SimplexFromImage(CIRCLE)
 
-lamb = 1/3
+lamb = 1
 eps = 2/p1.lenght
 n_iter = 100
-q1, q2, bar1, bar2 = barycenter(p1, p2, lamb, eps, n_iter)
+q1, q2, bar1, bar2, p = barycenter(p1, p2, lamb, eps, n_iter)
 print("temps écoulé = " + str(time.time()-T0))
 q1 = ImageFromSimplex(q1, p1.img_size)
 q1.show()
@@ -84,3 +84,6 @@ bar1 = ImageFromSimplex(bar1, p1.img_size)
 bar1.show()
 bar2 = ImageFromSimplex(bar2, p1.img_size)
 bar2.show()
+print("aaa")
+bar3 = ImageFromSimplex(p, p1.img_size)
+bar3.show()
