@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG  -rdynamic CMakeFiles/MOPSI.dir/src/main.cpp.o CMakeFiles/MOPSI.dir/src/pi.cpp.o CMakeFiles/MOPSI.dir/src/simplex.cpp.o  -o ../bin/MOPSI  dlib_build/libdlib.a -lpthread -lnsl -lSM -lICE -lX11 -lXext -lgif -lpng -lz -ljpeg -lcblas -llapack -lsqlite3 
