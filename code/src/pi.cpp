@@ -1,7 +1,4 @@
 #include "pi.h"
-#include <vector>
-#include <cmath>
-#include <dlib/matrix.h>
 
 using namespace dlib;
 using namespace std;
@@ -12,6 +9,7 @@ simplex bar(const simplex & p1, const simplex & p2, double lambda, double eps, i
 	double lamb1=lambda, lamb2=1-lambda;
 	int m = p1.length();
 	matrix<double> K(m,m);
+	set_all_elements(K,0);
 
 	// Initialising
 	for(int i=0; i<m; i++){
@@ -34,7 +32,7 @@ simplex bar(const simplex & p1, const simplex & p2, double lambda, double eps, i
 		a2 = pointwise_divide(p2.val(), K*b2);
 	}
 
-	simplex out((lamb1*p1.cte() + lamb2*p2.cte())*p, m, m, 1, name);
+	simplex out((lamb1*p1.cte() + lamb2*p2.cte())*p, sqrt(m), sqrt(m), 1, name);
 
 	return out;
 }

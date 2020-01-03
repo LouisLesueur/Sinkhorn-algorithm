@@ -4,11 +4,11 @@
 #include <fstream>
 #include <ctime>
 #include <cstring>
-#include <cmath>
 #include <cstdlib>
-#include <cassert>
+#include <dlib/gui_widgets.h>
 #include <dlib/pixel.h>
 #include <dlib/matrix.h>
+#include <dlib/array2d.h>
 #include <dlib/image_io.h>
 
 using namespace dlib;

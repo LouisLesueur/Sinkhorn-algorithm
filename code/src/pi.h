@@ -1,6 +1,6 @@
 #pragma once
 #include "simplex.h"
-#include<vector>
+#include <dlib/matrix.h>
 
 using namespace std;
 

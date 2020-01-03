@@ -13,7 +13,7 @@ simplex::simplex(matrix<double> VAL, int WIDTH, int HEIGHT, int CSTE, string pat
 }
 
 simplex::simplex(string path){
-	matrix<double> img;
+	matrix<uint8> img;
 	load_image(img, path);
 	
 	width = img.nc();
@@ -34,21 +34,18 @@ simplex::simplex(string path){
 }
 
 //--------------------OPERATEURS----------------------------
-double simplex::operator()(int i) const{
-	return tab(i,0);
-}
-
-double& simplex::operator()(int i){
-	return tab(i,0);
-}
+double simplex::operator()(int i) const{ return tab(i,0); }
+double& simplex::operator()(int i){ return tab(i,0); }
 
 
 
 void simplex::export_to_img(){
-	matrix<double> img(width, height);
+	matrix<uint8> img(height, width);
 	for(int i=0; i<width; i++){
 		for(int j=0; j<height; j++)
 			img(i,j)=tab(i+width*j,0)*constant;
 	}
+
+	cout<<img<<endl;
 	save_png(img, name);
 }
