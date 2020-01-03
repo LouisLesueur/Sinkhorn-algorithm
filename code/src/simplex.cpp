@@ -4,21 +4,21 @@
 //======================CLASSE SIMPLEXE=======================
 
 //---------------------CONSTRUCTEURS----------------------------
-/*simplex::simplex(int n, char ID){
+simplex::simplex(int n, char ID){
 	id = ID;
 	size = n;
 	width = n;
 	height = 1;
 	tab = new double[n];
-	double sum = 0;
+	/*double sum = 0;
 	for(int i=0; i<n; i++){
 		tab[i] = Random(0,100);
 		sum += tab[i];
 	}
 	for(int i=0; i<n; i++)
 		tab[i] /= sum;
-	constant = sum;
-}*/
+	constant = sum;*/
+}
 
 simplex::simplex(double values[], int n, int WIDTH, int HEIGHT, char ID){
 	id = ID;
@@ -37,8 +37,8 @@ simplex::simplex(double values[], int n, int WIDTH, int HEIGHT, char ID){
 }
 
 simplex::simplex(const char* const path, char ID){
-	array2d<rgb_pixel> img;
-	load_png(img, path);
+	array2d<double> img;
+	load_image(img, path);
 	
 	width = img.nc();
 	height = img.nr();
@@ -47,8 +47,8 @@ simplex::simplex(const char* const path, char ID){
 	int sum = 0;
 	for(int i=0; i<width; i++){
 		for(int j=0; j<height; j++){
-			tab[i+width*j] = img[i][j].red;
-			sum += img[i][j].red;
+			tab[i+width*j] = img[i][j];
+			sum += img[i][j];
 		}
 	}
 	constant = sum;
@@ -89,10 +89,10 @@ void simplex::plot(){
 
 
 void simplex::export_to_img(){
-	array2d<rgb_pixel> img(width, height);
+	array2d<double> img(width, height);
 	for(int i=0; i<width; i++){
 		for(int j=0; j<height; j++)
-			img[i][j]=rgb_pixel(tab[i+width*j]*constant,0,0);
+			img[i][j]=tab[i+width*j]*constant;
 	}
 	std::string name = "img";
 	name += id;

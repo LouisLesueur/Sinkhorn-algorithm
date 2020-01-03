@@ -12,7 +12,7 @@ using namespace std;
 PI::PI(int n){
 	size = n;
 	tab = new double[n*n];
-	double sum = 0;
+	/*double sum = 0;
 
 	for(int i=0; i<n; i++){
 		for(int j=0; j<n; j++){
@@ -22,7 +22,7 @@ PI::PI(int n){
 		}
 	}
 	for(int i=0; i<n*n; i++)
-		tab[i] /= sum;
+		tab[i] /= sum;*/
 }
 
 //----------------------------OPERATEURS----------------------------------
