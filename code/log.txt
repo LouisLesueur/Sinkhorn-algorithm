@@ -1,0 +1,1 @@
+g++  -c  -Wall -Iinclude/dlib -c -o build/pi.o src/pi.cpp
