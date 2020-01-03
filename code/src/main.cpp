@@ -18,8 +18,8 @@ int main(int argc, char *argv[])
 	test.export_to_img();
 
 	int n_iter = strtol(argv[1], nullptr, 0);;
-	double eps = 2/square.length();
-	double lambda = 0.8;
+	double eps = 2/double(square.length());
+	double lambda = 1;
 	simplex barycenter = bar(square, circle, lambda, eps, n_iter, "bary.png");
 	barycenter.export_to_img();
 	return 0;

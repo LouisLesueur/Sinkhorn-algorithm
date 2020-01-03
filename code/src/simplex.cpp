@@ -46,6 +46,5 @@ void simplex::export_to_img(){
 			img(i,j)=tab(i+width*j,0)*constant;
 	}
 
-	cout<<img<<endl;
 	save_png(img, name);
 }
