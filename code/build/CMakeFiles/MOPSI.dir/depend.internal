@@ -342,11 +342,14 @@ CMakeFiles/MOPSI.dir/src/main.cpp.o
  ../lib/dlib/dlib/threads/threaded_object_extension.h
  ../lib/dlib/dlib/threads/threaded_object_extension_abstract.h
  ../lib/dlib/dlib/threads/threads_kernel.h
+ ../lib/dlib/dlib/threads/threads_kernel_1.cpp
+ ../lib/dlib/dlib/threads/threads_kernel_1.h
  ../lib/dlib/dlib/threads/threads_kernel_2.cpp
  ../lib/dlib/dlib/threads/threads_kernel_2.h
  ../lib/dlib/dlib/threads/threads_kernel_abstract.h
  ../lib/dlib/dlib/threads/threads_kernel_shared.cpp
  ../lib/dlib/dlib/threads/threads_kernel_shared.h
+ ../lib/dlib/dlib/threads/windows.h
  ../lib/dlib/dlib/uintn.h
  ../lib/dlib/dlib/unicode.h
  ../lib/dlib/dlib/unicode/unicode.cpp
@@ -1067,11 +1070,14 @@ CMakeFiles/MOPSI.dir/src/simplex.cpp.o
  ../lib/dlib/dlib/threads/threaded_object_extension.h
  ../lib/dlib/dlib/threads/threaded_object_extension_abstract.h
  ../lib/dlib/dlib/threads/threads_kernel.h
+ ../lib/dlib/dlib/threads/threads_kernel_1.cpp
+ ../lib/dlib/dlib/threads/threads_kernel_1.h
  ../lib/dlib/dlib/threads/threads_kernel_2.cpp
  ../lib/dlib/dlib/threads/threads_kernel_2.h
  ../lib/dlib/dlib/threads/threads_kernel_abstract.h
  ../lib/dlib/dlib/threads/threads_kernel_shared.cpp
  ../lib/dlib/dlib/threads/threads_kernel_shared.h
+ ../lib/dlib/dlib/threads/windows.h
  ../lib/dlib/dlib/uintn.h
  ../lib/dlib/dlib/unicode.h
  ../lib/dlib/dlib/unicode/unicode.cpp

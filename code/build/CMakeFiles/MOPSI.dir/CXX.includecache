@@ -3368,6 +3368,34 @@ windows.h
 posix.h
 ../lib/dlib/dlib/threads/posix.h
 
+../lib/dlib/dlib/threads/threads_kernel_1.cpp
+../platform.h
+../lib/dlib/dlib/platform.h
+threads_kernel_1.h
+../lib/dlib/dlib/threads/threads_kernel_1.h
+process.h
+-
+
+../lib/dlib/dlib/threads/threads_kernel_1.h
+threads_kernel_abstract.h
+../lib/dlib/dlib/threads/threads_kernel_abstract.h
+../windows_magic.h
+../lib/dlib/dlib/windows_magic.h
+windows.h
+-
+../algs.h
+../lib/dlib/dlib/algs.h
+condition_variable
+-
+mutex
+-
+chrono
+-
+threads_kernel_shared.h
+../lib/dlib/dlib/threads/threads_kernel_shared.h
+threads_kernel_1.cpp
+../lib/dlib/dlib/threads/threads_kernel_1.cpp
+
 ../lib/dlib/dlib/threads/threads_kernel_2.cpp
 ../platform.h
 ../lib/dlib/dlib/platform.h
@@ -3419,6 +3447,10 @@ auto_mutex_extension.h
 ../lib/dlib/dlib/test_for_odr_violations.h
 threads_kernel_shared.cpp
 ../lib/dlib/dlib/threads/threads_kernel_shared.cpp
+
+../lib/dlib/dlib/threads/windows.h
+threads_kernel_1.h
+../lib/dlib/dlib/threads/threads_kernel_1.h
 
 ../lib/dlib/dlib/uintn.h
 assert.h
@@ -3516,22 +3548,6 @@ vector
 platform.h
 ../lib/dlib/dlib/platform.h
 
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/main.cpp
-simplex.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.h
-pi.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.h
-cmath
--
-iostream
--
-
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.h
-simplex.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.h
-vector
--
-
 /home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.cpp
 simplex.h
 /home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.h
@@ -3543,6 +3559,8 @@ fstream
 -
 ctime
 -
+cstring
+-
 cmath
 -
 cstdlib
@@ -3551,7 +3569,7 @@ cassert
 -
 dlib/pixel.h
 -
-dlib/array2d.h
+dlib/matrix.h
 -
 dlib/image_io.h
 -

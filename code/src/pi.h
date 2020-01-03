@@ -3,29 +3,5 @@
 #include<vector>
 
 using namespace std;
-class PI{
-	private:
-		int size;
-		double* tab;
-	public:
-		//Construire une matrice pi de taille n
-		PI(int n);
 
-		//Avoir la taille de la matrice
-		int length() const{return size;};
-
-		//Pour acceder aux éléments
-		double operator()(int i, int j) const;
-		double& operator()(int i, int j);
-
-		void plot();
-
-		//Pour accèder aux marginales
-		simplex first_marginal();
-		simplex second_marginal();
-
-		~PI(){delete [] tab;}
-};
-
-PI W(const simplex &s1, const simplex &s2, double eps, int n_iter);
-simplex bar(const simplex & s1, const simplex & s2, double lambda, double eps, int n_iter);
+simplex bar(const simplex & p1, const simplex & p2, double lambda, double eps, int n_iter, string name);

@@ -34,12 +34,12 @@ int main(int argc, char *argv[])
 	barycenter.plot();
 	*/
 	//TEST SIMPLEXE IMAGE
-	simplex square("../square.png", '1');
-	simplex circle("../circle.png", '2');
+	simplex square("../square.png");
+	simplex circle("../circle.png");
 	int n_iter = strtol(argv[1], nullptr, 0);;
-	double eps = 1/((double)3*square.length());
-	double lambda = 0.5;
-	simplex barycenter = bar(square, circle, lambda, eps, n_iter);
-	square.export_to_img();
+	double eps = 2/square.length();
+	double lambda = 0.8;
+	simplex barycenter = bar(square, circle, lambda, eps, n_iter, "bary.png");
+	barycenter.export_to_img();
 	return 0;
 }

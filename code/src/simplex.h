@@ -3,14 +3,16 @@
 #include <iostream>
 #include <fstream>
 #include <ctime>
+#include <cstring>
 #include <cmath>
 #include <cstdlib>
 #include <cassert>
 #include <dlib/pixel.h>
-#include <dlib/array2d.h>
+#include <dlib/matrix.h>
 #include <dlib/image_io.h>
 
 using namespace dlib;
+using namespace std;
 
 //À appeler une fois dans le main
 //void InitRandom();
@@ -19,23 +21,23 @@ using namespace dlib;
 
 class simplex{
 	private:
-		double* tab;
-		int size;
-		char id;
+		matrix<double> tab;
+		string name;
 		int constant, width, height;
 	public:
-		//constructeur vide, nécessaire pour pi
-        simplex(){}
-		//Pour générer un simplexe de taille n
-		simplex(int n, char ID='0');
-		//pour construire un simplexe à partir d'un tableau
-		simplex(double values[], int n, int WIDTH, int HEIGHT, char ID='0');
-		//simplex à partir d'une image
-		simplex(const char* const path, char ID='0');
+		//constructeur vide
+		simplex(){}
+		//constructeur de simplexe 'vide'
+		simplex(matrix<double> VAL, int WIDTH, int HEIGHT, int CSTE, string path);
+		//pour construire un simplexe à partir d'une image
+		simplex(string path);
+		
 		//Pour récupérer la taille du simplexe
-		int length() const{return size;};
-		//To save in a csv file
-		void plot();
+		int length() const{return width*height;};
+		int w() const{return width;};
+		int h() const{return height;};
+		int cte() const{return constant;};
+		matrix<double> val() const{return tab;};
 
 		//To export as an image
 		void export_to_img();
@@ -43,8 +45,6 @@ class simplex{
 		//Pour accèder à un élément du simplexe
 		double operator()(int i) const;
 		double& operator()(int i);
-
-        ~simplex(){delete [] tab;}
 
 };
 
