@@ -1,4 +1,5 @@
 # Sinkhorn Algorithm
+
 This is a simple implementation of the Sinkhorn algorithm using c++ and dlib. It was created for an academic project of the ENPC.
 
 ## Build
