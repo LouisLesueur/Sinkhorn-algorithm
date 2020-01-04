@@ -8,6 +8,7 @@ using namespace std;
 simplex bar(const simplex & p1, const simplex & p2, double lambda, double eps, int n_iter, string name){
 	double lamb1=lambda, lamb2=1-lambda;
 	int m = p1.length();
+
 	matrix<double> K(m,m);
 	set_all_elements(K,0);
 
@@ -32,7 +33,7 @@ simplex bar(const simplex & p1, const simplex & p2, double lambda, double eps, i
 		a2 = pointwise_divide(p2.val(), K*b2);
 	}
 
-	simplex out((lamb1*p1.cte() + lamb2*p2.cte())*p, sqrt(m), sqrt(m), 1, name);
+	simplex out((lamb1*p1.cte() + lamb2*p2.cte())*p, p1.w(), p1.h(), 1, name);
 
 	return out;
 }

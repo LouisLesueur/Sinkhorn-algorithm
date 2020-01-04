@@ -4769,9 +4769,13 @@ simplex.h
 /home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.h
 pi.h
 /home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.h
+getopt.h
+-
 cmath
 -
 iostream
+-
+cstdlib
 -
 
 /home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.h

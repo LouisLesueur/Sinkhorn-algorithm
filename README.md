@@ -1,25 +1,27 @@
-# MOPSI
-## To do:
-+ Lire le papier jusqu'à la page 11
-+ Implémenter un algo pour générer des densités de proba discrètes
-+ Calculer des W_epsilon et regarder ce qu'il se passe pour différentes valeurs de epsilon ( reproduire ce qu'il se passe sur la Figure 1 du papier )
-+ envoyer un mail pendant la semaine du 18 ( pour le 20/11 )
-+ prochain rdv le 29/11 à 15h
+# Sinkhorn Algorithm
+This is a simple implementation of the Sinkhorn algorithm using c++ and dlib. It was created for an academic project of the ENPC.
 
-## Needed features
+## Build
 
-This project uses Eigen. To compile it, just create a build directory in your computer:
+This project uses CMake. To compile it, follow the instructions:
 
 ```
-cd ~
-git clone https://github.com/eigenteam/eigen-git-mirror
-sudo ln -s /usr/local/include ~/eigen-git-mirror/Eigen
+cd code/build
+cmake ..
+make
+```
+## Documentation
+
+Once it is compiled, an executable will be in /bin.
+Several options are possible, to list them just type:
+
+```
+./MOPSI -h
 ```
 
-and add the following line to your **.bashrc**
-```
-export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH$:~/eigen-git-mirror
-```
+Information on the algorithm can be found in the reference folder.
+
+
 ## Authors
 
 **Louis Hémadou** - student at the École Nationale des Ponts et Chaussées

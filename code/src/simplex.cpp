@@ -18,12 +18,16 @@ simplex::simplex(string path){
 	
 	width = img.nc();
 	height = img.nr();
-	
-	tab = matrix<double>(width*height, 1);
+
+	int size = max(width, height);
+
+	tab = matrix<double>(size*size,1);
+	set_all_elements(tab,0);
+
 	int sum = 0;
-	for(int i=0; i<width; i++){
-		for(int j=0; j<height; j++){
-			tab(i+width*j,0) = img(i,j);
+	for(int i=0; i<height; i++){
+		for(int j=0; j<width; j++){
+			tab(i+height*j,0) = img(i,j);
 			sum += img(i,j);
 		}
 	}
@@ -41,9 +45,9 @@ double& simplex::operator()(int i){ return tab(i,0); }
 
 void simplex::export_to_img(){
 	matrix<uint8> img(height, width);
-	for(int i=0; i<width; i++){
-		for(int j=0; j<height; j++)
-			img(i,j)=tab(i+width*j,0)*constant;
+	for(int i=0; i<height; i++){
+		for(int j=0; j<width; j++)
+			img(i,j)=tab(i+height*j,0)*constant;
 	}
 
 	save_png(img, name);

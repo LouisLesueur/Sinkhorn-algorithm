@@ -33,7 +33,7 @@ class simplex{
 		simplex(string path);
 		
 		//Pour récupérer la taille du simplexe
-		int length() const{return width*height;};
+		int length() const{return tab.nr()*tab.nc();};
 		int w() const{return width;};
 		int h() const{return height;};
 		int cte() const{return constant;};
