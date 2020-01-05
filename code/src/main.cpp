@@ -82,7 +82,7 @@ void ProcessArgs(int argc, char** argv)
 
 
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {	
 	ProcessArgs(argc, argv);
 	simplex IN(in);
@@ -103,6 +103,7 @@ int main(int argc, char *argv[])
 			string name = "bary";
 			name += to_string(i);
 			name += ".png";
+			cout<<"building "<<name<<" for n_iter ="<<n_iter<<" eps ="<<eps<<" et lambda ="<<lambda<<endl;
 			simplex barycenter = bar(IN, OUT, lambda, eps, n_iter, name);
 			barycenter.export_to_img();
 		}
