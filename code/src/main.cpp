@@ -104,7 +104,7 @@ int main(int argc, char **argv)
 			name += to_string(i);
 			name += ".png";
 			cout<<"building "<<name<<" for n_iter ="<<n_iter<<" eps ="<<eps<<" et lambda ="<<lambda<<endl;
-			simplex barycenter = bar(IN, OUT, lambda, eps, n_iter, name);
+			simplex barycenter = bar2(IN, OUT, lambda, eps, n_iter, name);
 			barycenter.export_to_img();
 		}
 	}

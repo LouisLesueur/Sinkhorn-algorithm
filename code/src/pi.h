@@ -5,3 +5,5 @@
 using namespace std;
 
 simplex bar(const simplex & p1, const simplex & p2, double lambda, double eps, int n_iter, string name);
+
+simplex bar2(const simplex & p1, const simplex & p2, double lambda, double eps, int n_iter, string name);
