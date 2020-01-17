@@ -4764,35 +4764,21 @@ vector
 platform.h
 ../lib/dlib/dlib/platform.h
 
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/main.cpp
-simplex.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.cpp
 pi.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.h
-getopt.h
--
-cmath
--
-iostream
--
-cstdlib
--
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.h
 
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.cpp
-pi.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.h
-
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.h
 simplex.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.h
 dlib/matrix.h
 -
 
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.cpp
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.cpp
 simplex.h
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.h
 
-/home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.h
 iostream
 -
 fstream

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lotophagos/Documents/ENPC/MOPSI/code
+CMAKE_SOURCE_DIR = /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lotophagos/Documents/ENPC/MOPSI/code/build
+CMAKE_BINARY_DIR = /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MOPSI.dir/depend.make
@@ -59,42 +59,42 @@ include CMakeFiles/MOPSI.dir/flags.make
 
 CMakeFiles/MOPSI.dir/src/main.cpp.o: CMakeFiles/MOPSI.dir/flags.make
 CMakeFiles/MOPSI.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotophagos/Documents/ENPC/MOPSI/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MOPSI.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MOPSI.dir/src/main.cpp.o -c /home/lotophagos/Documents/ENPC/MOPSI/code/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MOPSI.dir/src/main.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MOPSI.dir/src/main.cpp.o -c /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/main.cpp
 
 CMakeFiles/MOPSI.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MOPSI.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotophagos/Documents/ENPC/MOPSI/code/src/main.cpp > CMakeFiles/MOPSI.dir/src/main.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/main.cpp > CMakeFiles/MOPSI.dir/src/main.cpp.i
 
 CMakeFiles/MOPSI.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MOPSI.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotophagos/Documents/ENPC/MOPSI/code/src/main.cpp -o CMakeFiles/MOPSI.dir/src/main.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/main.cpp -o CMakeFiles/MOPSI.dir/src/main.cpp.s
 
 CMakeFiles/MOPSI.dir/src/pi.cpp.o: CMakeFiles/MOPSI.dir/flags.make
 CMakeFiles/MOPSI.dir/src/pi.cpp.o: ../src/pi.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotophagos/Documents/ENPC/MOPSI/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MOPSI.dir/src/pi.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MOPSI.dir/src/pi.cpp.o -c /home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MOPSI.dir/src/pi.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MOPSI.dir/src/pi.cpp.o -c /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.cpp
 
 CMakeFiles/MOPSI.dir/src/pi.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MOPSI.dir/src/pi.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.cpp > CMakeFiles/MOPSI.dir/src/pi.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.cpp > CMakeFiles/MOPSI.dir/src/pi.cpp.i
 
 CMakeFiles/MOPSI.dir/src/pi.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MOPSI.dir/src/pi.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.cpp -o CMakeFiles/MOPSI.dir/src/pi.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.cpp -o CMakeFiles/MOPSI.dir/src/pi.cpp.s
 
 CMakeFiles/MOPSI.dir/src/simplex.cpp.o: CMakeFiles/MOPSI.dir/flags.make
 CMakeFiles/MOPSI.dir/src/simplex.cpp.o: ../src/simplex.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotophagos/Documents/ENPC/MOPSI/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MOPSI.dir/src/simplex.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MOPSI.dir/src/simplex.cpp.o -c /home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MOPSI.dir/src/simplex.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MOPSI.dir/src/simplex.cpp.o -c /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.cpp
 
 CMakeFiles/MOPSI.dir/src/simplex.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MOPSI.dir/src/simplex.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.cpp > CMakeFiles/MOPSI.dir/src/simplex.cpp.i
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.cpp > CMakeFiles/MOPSI.dir/src/simplex.cpp.i
 
 CMakeFiles/MOPSI.dir/src/simplex.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MOPSI.dir/src/simplex.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.cpp -o CMakeFiles/MOPSI.dir/src/simplex.cpp.s
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.cpp -o CMakeFiles/MOPSI.dir/src/simplex.cpp.s
 
 # Object files for target MOPSI
 MOPSI_OBJECTS = \
@@ -121,7 +121,7 @@ MOPSI_EXTERNAL_OBJECTS =
 ../bin/MOPSI: /usr/lib/libjpeg.so
 ../bin/MOPSI: /usr/lib/libsqlite3.so
 ../bin/MOPSI: CMakeFiles/MOPSI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lotophagos/Documents/ENPC/MOPSI/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../bin/MOPSI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../bin/MOPSI"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MOPSI.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -134,6 +134,6 @@ CMakeFiles/MOPSI.dir/clean:
 .PHONY : CMakeFiles/MOPSI.dir/clean
 
 CMakeFiles/MOPSI.dir/depend:
-	cd /home/lotophagos/Documents/ENPC/MOPSI/code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lotophagos/Documents/ENPC/MOPSI/code /home/lotophagos/Documents/ENPC/MOPSI/code /home/lotophagos/Documents/ENPC/MOPSI/code/build /home/lotophagos/Documents/ENPC/MOPSI/code/build /home/lotophagos/Documents/ENPC/MOPSI/code/build/CMakeFiles/MOPSI.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build/CMakeFiles/MOPSI.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/MOPSI.dir/depend
 

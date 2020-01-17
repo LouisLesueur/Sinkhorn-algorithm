@@ -1,4 +1,4 @@
-# Install script for directory: /home/lotophagos/Documents/ENPC/MOPSI/code/lib/dlib/dlib
+# Install script for directory: /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/lib/dlib/dlib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

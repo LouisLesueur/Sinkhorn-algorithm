@@ -70,7 +70,7 @@ void ProcessArgs(int argc, char** argv)
 				steps = stoi(optarg);
 				cout <<steps<< " steps" << endl;
 				break;
-			
+
 			case 'h': // -h or --help
 			case '?': // Unrecognized option
 			default:
@@ -83,14 +83,14 @@ void ProcessArgs(int argc, char** argv)
 
 
 int main(int argc, char **argv)
-{	
+{
 	ProcessArgs(argc, argv);
 	simplex IN(in);
 	simplex OUT(out);
 
 	double eps=1/double(fact*IN.length());
 
-	if(steps==1){	
+	if(steps==1){
 		simplex barycenter = bar(IN, OUT, lambda, eps, n_iter, "bary.png");
 		barycenter.export_to_img();
 		return 0;

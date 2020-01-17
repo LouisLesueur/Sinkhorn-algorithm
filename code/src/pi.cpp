@@ -21,7 +21,8 @@ simplex bar(const simplex & p1, const simplex & p2, double lambda, double eps, i
 			K(i,j) = exp(-dis/eps);
 		}
 	}
-       	matrix<double> a1, a2, p, b1, b2;
+
+	matrix<double> a1, a2, p, b1, b2;
 	a1 = ones_matrix<double>(m,1);
 	a2 = ones_matrix<double>(m,1);
 
@@ -34,7 +35,6 @@ simplex bar(const simplex & p1, const simplex & p2, double lambda, double eps, i
 	}
 
 	simplex out((lamb1*p1.cte() + lamb2*p2.cte())*p, p1.w(), p1.h(), 1, name);
-
 	return out;
 }
 
@@ -54,7 +54,8 @@ simplex bar2(const simplex & p1, const simplex & p2, double lambda, double eps, 
             K(i,j) = exp(-dis/eps);
         }
     }
-        matrix<double> u1, u2, v1, v2, p;
+
+		matrix<double> u1, u2, v1, v2, p;
     u1 = ones_matrix<double>(m,1);
     u2 = ones_matrix<double>(m,1);
     v1 = ones_matrix<double>(m,1);
@@ -72,6 +73,5 @@ simplex bar2(const simplex & p1, const simplex & p2, double lambda, double eps, 
     }
 
     simplex out((lamb1*p1.cte() + lamb2*p2.cte())*p, p1.w(), p1.h(), 1, name);
-
     return out;
 }

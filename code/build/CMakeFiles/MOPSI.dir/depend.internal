@@ -464,9 +464,9 @@ CMakeFiles/MOPSI.dir/src/main.cpp.o
  ../lib/dlib/dlib/vectorstream/vectorstream.h
  ../lib/dlib/dlib/vectorstream/vectorstream_abstract.h
  ../lib/dlib/dlib/windows_magic.h
- /home/lotophagos/Documents/ENPC/MOPSI/code/src/main.cpp
- /home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.h
- /home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.h
+ /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/main.cpp
+ /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.h
+ /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.h
 CMakeFiles/MOPSI.dir/src/pi.cpp.o
  ../lib/dlib/dlib/algs.h
  ../lib/dlib/dlib/any.h
@@ -930,9 +930,9 @@ CMakeFiles/MOPSI.dir/src/pi.cpp.o
  ../lib/dlib/dlib/vectorstream/vectorstream.h
  ../lib/dlib/dlib/vectorstream/vectorstream_abstract.h
  ../lib/dlib/dlib/windows_magic.h
- /home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.cpp
- /home/lotophagos/Documents/ENPC/MOPSI/code/src/pi.h
- /home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.h
+ /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.cpp
+ /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.h
+ /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.h
 CMakeFiles/MOPSI.dir/src/simplex.cpp.o
  ../lib/dlib/dlib/algs.h
  ../lib/dlib/dlib/any.h
@@ -1396,5 +1396,5 @@ CMakeFiles/MOPSI.dir/src/simplex.cpp.o
  ../lib/dlib/dlib/vectorstream/vectorstream.h
  ../lib/dlib/dlib/vectorstream/vectorstream_abstract.h
  ../lib/dlib/dlib/windows_magic.h
- /home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.cpp
- /home/lotophagos/Documents/ENPC/MOPSI/code/src/simplex.h
+ /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.cpp
+ /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.h
