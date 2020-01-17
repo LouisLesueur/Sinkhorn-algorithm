@@ -9,7 +9,7 @@ using namespace std;
 
 //Default parameters
 int n_iter = 10, steps = 1;
-double lambda = 0.5, fact = 1000;
+float lambda = 0.5, fact = 1000;
 string in="../circle.png", out="../square.png";
 
 void PrintHelp()
@@ -59,11 +59,11 @@ void ProcessArgs(int argc, char** argv)
 				cout << "n_iter set to: " << n_iter << endl;
 				break;
 			case 'f':
-				fact = stod(optarg);
+				fact = stof(optarg);
 				cout << "fact set to: "<<fact<<endl;
 				break;
 			case 'l':
-				lambda = stod(optarg);
+				lambda = stof(optarg);
 				cout << "lambda set to: " << lambda << endl;
 				break;
 			case 's':
@@ -88,24 +88,25 @@ int main(int argc, char **argv)
 	simplex IN(in);
 	simplex OUT(out);
 
-	double eps=1/double(fact*IN.length());
+	float eps=1/float(fact*IN.length());
 
 	if(steps==1){
-		simplex barycenter = bar(IN, OUT, lambda, eps, n_iter, "bary.png");
+		simplex barycenter = bar(gen_K(IN.length(), eps), IN, OUT, lambda, eps, n_iter, "bary.png");
 		barycenter.export_to_img();
 		return 0;
 	}
 	else
 	{
 		lambda = 0;
-		
+		matrix<float> K = gen_K(IN.length(), eps);
+
 		for(int i=0; i<steps; i++){
-			lambda = double(i)/double(steps-1);
+			lambda = float(i)/float(steps-1);
 			string name = "bary";
 			name += to_string(i);
 			name += ".png";
 			cout<<"building "<<name<<" for n_iter ="<<n_iter<<" eps ="<<eps<<" et lambda ="<<lambda<<endl;
-			simplex barycenter = bar(IN, OUT, lambda, eps, n_iter, name);
+			simplex barycenter = bar(K, IN, OUT, lambda, eps, n_iter, name);
 			barycenter.export_to_img();
 		}
 	}

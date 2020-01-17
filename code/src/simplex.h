@@ -21,30 +21,30 @@ using namespace std;
 
 class simplex{
 	private:
-		matrix<double> tab;
+		matrix<float> tab;
 		string name;
 		int constant, width, height;
 	public:
 		//constructeur vide
 		simplex(){}
 		//constructeur de simplexe 'vide'
-		simplex(matrix<double> VAL, int WIDTH, int HEIGHT, int CSTE, string path);
+		simplex(matrix<float> VAL, int WIDTH, int HEIGHT, int CSTE, string path);
 		//pour construire un simplexe à partir d'une image
 		simplex(string path);
-		
+
 		//Pour récupérer la taille du simplexe
 		int length() const{return tab.nr()*tab.nc();};
 		int w() const{return width;};
 		int h() const{return height;};
 		int cte() const{return constant;};
-		matrix<double> val() const{return tab;};
+		matrix<float> val() const{return tab;};
 
 		//To export as an image
 		void export_to_img();
 
 		//Pour accèder à un élément du simplexe
-		double operator()(int i) const;
-		double& operator()(int i);
+		float operator()(int i) const;
+		float& operator()(int i);
 
 };
 

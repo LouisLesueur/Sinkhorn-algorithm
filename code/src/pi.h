@@ -4,6 +4,5 @@
 
 using namespace std;
 
-simplex bar(const simplex & p1, const simplex & p2, double lambda, double eps, int n_iter, string name);
-
-simplex bar2(const simplex & p1, const simplex & p2, double lambda, double eps, int n_iter, string name);
+matrix<float> gen_K(int m, float eps);
+simplex bar(const matrix<float> &K, const simplex & p1, const simplex & p2, float lambda, float eps, int n_iter, string name);

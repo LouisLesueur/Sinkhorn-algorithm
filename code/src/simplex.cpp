@@ -4,7 +4,7 @@
 //======================CLASSE SIMPLEXE=======================
 
 //---------------------CONSTRUCTEURS----------------------------
-simplex::simplex(matrix<double> VAL, int WIDTH, int HEIGHT, int CSTE, string path){
+simplex::simplex(matrix<float> VAL, int WIDTH, int HEIGHT, int CSTE, string path){
 	name=path;
 	constant=CSTE;
 	width=WIDTH;
@@ -21,7 +21,7 @@ simplex::simplex(string path){
 
 	int size = max(width, height);
 
-	tab = ones_matrix<double>(size*size,1);
+	tab = ones_matrix<float>(size*size,1);
 	int sum = 0;
 	for(int i=0; i<width; i++){
 		for(int j=0; j<height; j++){
@@ -37,8 +37,8 @@ simplex::simplex(string path){
 }
 
 //--------------------OPERATEURS----------------------------
-double simplex::operator()(int i) const{ return tab(i,0); }
-double& simplex::operator()(int i){ return tab(i,0); }
+float simplex::operator()(int i) const{ return tab(i,0); }
+float& simplex::operator()(int i){ return tab(i,0); }
 
 
 
@@ -46,7 +46,7 @@ void simplex::export_to_img(){
 	matrix<uint8> img(height, width);
 	for(int i=0; i<width; i++){
 		for(int j=0; j<height; j++){
-			double imag=tab(i+width*j,0)*constant;
+			float imag=tab(i+width*j,0)*constant;
 			if(imag>255)
 			  img(i,j)=255;
 			else
