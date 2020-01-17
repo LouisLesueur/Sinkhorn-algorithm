@@ -120,6 +120,8 @@ MOPSI_EXTERNAL_OBJECTS =
 ../bin/MOPSI: /usr/lib/libz.so
 ../bin/MOPSI: /usr/lib/libjpeg.so
 ../bin/MOPSI: /usr/lib/libsqlite3.so
+../bin/MOPSI: /usr/lib/libgomp.so
+../bin/MOPSI: /usr/lib/libpthread.so
 ../bin/MOPSI: CMakeFiles/MOPSI.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../bin/MOPSI"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MOPSI.dir/link.txt --verbose=$(VERBOSE)

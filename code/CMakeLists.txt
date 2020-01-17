@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.8.4)
 
 PROJECT(MOPSI)
 
+
+
 include(./lib/dlib/dlib/cmake)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "lib/")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "lib/")
@@ -13,3 +15,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "../bin/")
 ADD_EXECUTABLE(MOPSI src/main.cpp src/pi.cpp src/pi.h src/simplex.cpp src/simplex.h)
     # Then we tell it to link with dlib.
 TARGET_LINK_LIBRARIES(MOPSI dlib)
+
+find_package(OpenMP)
+if(OpenMP_CXX_FOUND)
+    target_link_libraries(MOPSI PUBLIC OpenMP::OpenMP_CXX)
+endif()

@@ -21,9 +21,7 @@ simplex::simplex(string path){
 
 	int size = max(width, height);
 
-	tab = matrix<double>(size*size,1);
-	set_all_elements(tab,0);
-
+	tab = ones_matrix<double>(size*size,1);
 	int sum = 0;
 	for(int i=0; i<width; i++){
 		for(int j=0; j<height; j++){
@@ -32,8 +30,9 @@ simplex::simplex(string path){
 		}
 	}
 	constant = sum;
-	for(int i=0; i<width*height; i++)
-		tab(i,0)/=sum;
+
+	tab=tab/sum;
+
 	name=path;
 }
 
