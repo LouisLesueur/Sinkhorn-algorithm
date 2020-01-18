@@ -9,7 +9,7 @@ using namespace std;
 
 //Default parameters
 int n_iter = 10, steps = 1;
-float lambda = 0.5, fact = 1000;
+float lambda = 0.5, lambdai=0, lambdao=1, fact = 1000;
 string in="../circle.png", out="../square.png";
 
 void PrintHelp()
@@ -20,6 +20,8 @@ void PrintHelp()
 		"--n_iter <n>:          Set number of iterations\n"
 		"--fact: <f>            Set the precision\n"
 		"--lambda <l>:          Set the value of lambda\n"
+		"--lambdai <I>:        Set the start value of lambda for a serie\n"
+		"--lambdao <O>:        Set the stop value of lambda for a serie\n"
 		"--steps <s>:           Set the number of steps\n"
 		"--help:                Show help\n";
 	exit(1);
@@ -27,13 +29,15 @@ void PrintHelp()
 
 void ProcessArgs(int argc, char** argv)
 {
-	const char* const short_opts = "i:o:n:f:l:s:h";
+	const char* const short_opts = "i:o:n:f:l:I:O:s:h";
 	const option long_opts[] = {
 		{"in", required_argument, nullptr, 'i'},
 		{"out", required_argument, nullptr, 'o'},
 		{"n_iter", required_argument, nullptr, 'n'},
 		{"fact", required_argument, nullptr, 'f'},
 		{"lambda", required_argument, nullptr, 'l'},
+		{"lambdai", required_argument, nullptr, 'I'},
+		{"lambdao", required_argument, nullptr, 'O'},
 		{"steps", required_argument, nullptr, 's'},
 		{"help", no_argument, nullptr, 'h'},
 		{nullptr, no_argument, nullptr, 0}
@@ -67,6 +71,14 @@ void ProcessArgs(int argc, char** argv)
 				lambda = stof(optarg);
 				cout << "lambda set to: " << lambda << endl;
 				break;
+			case 'I':
+				lambdai = stof(optarg);
+				cout << "lambdai set to: " << lambdai << endl;
+				break;
+			case 'O':
+				lambdao = stof(optarg);
+				cout << "lambdao set to: " << lambdao << endl;
+				break;
 			case 's':
 				steps = stoi(optarg);
 				cout <<steps<< " steps" << endl;
@@ -99,12 +111,12 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		lambda = 0;
+		lambda = lambdai;
 		matrix<float> K = gen_K(IN.length(), eps);
 		matrix<float> tK = trans(K);
 
 		for(int i=0; i<steps; i++){
-			lambda = float(i)/float(steps-1);
+			lambda = (1-(float(i)/float(steps-1)))*lambdai + (float(i)/float(steps-1))*lambdao;
 			string name = "bary";
 			name += to_string(i);
 			name += ".png";

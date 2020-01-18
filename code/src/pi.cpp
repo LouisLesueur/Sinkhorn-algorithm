@@ -10,6 +10,7 @@ matrix<float> gen_K(int m, float eps){
   matrix<float> K(m,m);
 
   // Initialising
+  #pragma omp parallel for
   for(int i=0; i<m; i++){
       for(int j=0; j<m; j++){
           float x_i = ((float)i+1/2)/m;
