@@ -1,9 +1,9 @@
 #include "simplex.h"
 
 
-//======================CLASSE SIMPLEXE=======================
+//======================SIMPLEX CLASS=======================
 
-//---------------------CONSTRUCTEURS----------------------------
+//---------------------CONSTRUCTORS----------------------------
 simplex::simplex(matrix<float> VAL, int WIDTH, int HEIGHT, int CSTE, string path){
 	name=path;
 	constant=CSTE;
@@ -36,7 +36,7 @@ simplex::simplex(string path){
 	name=path;
 }
 
-//--------------------OPERATEURS----------------------------
+//--------------------OPERATORS----------------------------
 float simplex::operator()(int i) const{ return tab(i,0); }
 float& simplex::operator()(int i){ return tab(i,0); }
 

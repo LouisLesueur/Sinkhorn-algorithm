@@ -14,25 +14,20 @@
 using namespace dlib;
 using namespace std;
 
-//À appeler une fois dans le main
-//void InitRandom();
-//Pour générer un double aléatoire entre a et b
-//double Random(double a, double b);
-
 class simplex{
 	private:
 		matrix<float> tab;
 		string name;
 		int constant, width, height;
 	public:
-		//constructeur vide
+		//empty constructor
 		simplex(){}
-		//constructeur de simplexe 'vide'
+		//build a simplex from existing data
 		simplex(matrix<float> VAL, int WIDTH, int HEIGHT, int CSTE, string path);
-		//pour construire un simplexe à partir d'une image
+		//To build a simplex from a image
 		simplex(string path);
 
-		//Pour récupérer la taille du simplexe
+		//To get the characteritics of the simplex
 		int length() const{return tab.nr()*tab.nc();};
 		int w() const{return width;};
 		int h() const{return height;};
@@ -42,11 +37,8 @@ class simplex{
 		//To export as an image
 		void export_to_img();
 
-		//Pour accèder à un élément du simplexe
+		//To gets elements of the simplex
 		float operator()(int i) const;
 		float& operator()(int i);
 
 };
-
-//Pour afficher les éléments du simplexe
-std::ostream& operator<<(std::ostream& str, const simplex& s);
