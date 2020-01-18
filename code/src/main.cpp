@@ -54,6 +54,7 @@ void ProcessArgs(int argc, char** argv)
 			case 'o':
 				out = string(optarg);
 				cout<<"Going to: "<<out<<endl;
+				break;
 			case 'n':
 				n_iter = stoi(optarg);
 				cout << "n_iter set to: " << n_iter << endl;
