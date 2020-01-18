@@ -91,7 +91,8 @@ int main(int argc, char **argv)
 	float eps=1/float(fact*IN.length());
 
 	if(steps==1){
-		simplex barycenter = bar(gen_K(IN.length(), eps), IN, OUT, lambda, eps, n_iter, "bary.png");
+		matrix<float> K=gen_K(IN.length(), eps);
+		simplex barycenter = bar(K, trans(K), IN, OUT, lambda, eps, n_iter, "bary.png");
 		barycenter.export_to_img();
 		return 0;
 	}
@@ -99,6 +100,7 @@ int main(int argc, char **argv)
 	{
 		lambda = 0;
 		matrix<float> K = gen_K(IN.length(), eps);
+		matrix<float> tK = trans(K);
 
 		for(int i=0; i<steps; i++){
 			lambda = float(i)/float(steps-1);
@@ -106,7 +108,7 @@ int main(int argc, char **argv)
 			name += to_string(i);
 			name += ".png";
 			cout<<"building "<<name<<" for n_iter ="<<n_iter<<" eps ="<<eps<<" et lambda ="<<lambda<<endl;
-			simplex barycenter = bar(K, IN, OUT, lambda, eps, n_iter, name);
+			simplex barycenter = bar(K, tK, IN, OUT, lambda, eps, n_iter, name);
 			barycenter.export_to_img();
 		}
 	}

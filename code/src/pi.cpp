@@ -21,17 +21,31 @@ matrix<float> gen_K(int m, float eps){
   return exp(K);
 }
 
-simplex bar(const matrix<float> &K, const simplex & p1, const simplex & p2, float lambda, float eps, int n_iter, string name){
+simplex bar(const matrix<float> &K, const matrix<float> &tK, const simplex & p1, const simplex & p2, float lambda, float eps, int n_iter, string name){
     float lamb1=lambda, lamb2=1-lambda;
     int m = p1.length();
 
-		matrix<float> tK = trans(K);
-
 		matrix<float> u1, u2, v1, v2, p;
-    u1 = ones_matrix<float>(m,1);
-    u2 = ones_matrix<float>(m,1);
-    v1 = ones_matrix<float>(m,1);
-    v2 = ones_matrix<float>(m,1);
+    #pragma omp parallel sections
+    {
+
+      #pragma omp section
+      {
+      u1 = ones_matrix<float>(m,1);
+    }
+      #pragma omp section
+      {
+      u2 = ones_matrix<float>(m,1);
+    }
+      #pragma omp section
+      {
+      v1 = ones_matrix<float>(m,1);
+    }
+      #pragma omp section
+      {
+      v2 = ones_matrix<float>(m,1);
+    }
+  }
 
 		#pragma omp parallel for
     for(int l=0; l<n_iter; l++){

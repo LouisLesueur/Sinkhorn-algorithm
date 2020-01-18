@@ -4764,19 +4764,9 @@ vector
 platform.h
 ../lib/dlib/dlib/platform.h
 
-/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/main.cpp
-simplex.h
-/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.cpp
 pi.h
 /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.h
-getopt.h
--
-cmath
--
-iostream
--
-cstdlib
--
 
 /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.h
 simplex.h

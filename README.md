@@ -1,9 +1,10 @@
 # Sinkhorn Algorithm
 
-This is a simple implementation of the Sinkhorn algorithm using c++ and dlib. It was created for an academic project of the ENPC.
+This is a simple implementation of the Sinkhorn algorithm using c++, openmp and dlib. It was created for an academic project of the ENPC.
 
 ## Build
 
+If you don't have openmp you should install it first !
 This project uses CMake. To compile it, follow the instructions:
 
 ```
