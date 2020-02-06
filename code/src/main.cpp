@@ -104,10 +104,13 @@ int main(int argc, char **argv)
 	float eps=1/float(fact*IN.length());
 
 	if(steps==1){
-		cout<<"Generating K..."<<endl;
-		matrix<float> K=gen_K(IN.length(), eps);
+        //cout<<"Generating K..."<<endl;
+        //matrix<float> K=gen_K(IN.length(), eps);
+        cout<<"Generating C..."<<endl;
+        matrix<float> C=gen_C(IN.length());
 		cout<<"Building bary.png for n_iter ="<<n_iter<<" eps ="<<eps<<" and lambda ="<<lambda<<endl;
-		simplex barycenter = bar(K, IN, OUT, lambda, eps, n_iter, "bary.png");
+        simplex barycenter = bar_log(C, IN, OUT, lambda, eps, n_iter, "bary.png");
+        //simplex barycenter = bar(K, IN, OUT, lambda, eps, n_iter, "bary.png");
 		barycenter.export_to_img();
 		return 0;
 	}
