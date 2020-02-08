@@ -47,10 +47,7 @@ void simplex::export_to_img(){
 	for(int i=0; i<width; i++){
 		for(int j=0; j<height; j++){
 			float imag=tab(i+width*j,0)*constant;
-			if(imag>255)
-			  img(i,j)=255;
-			else
-			  img(i,j)=imag;
+			img(i,j)=imag;
 		}
 	}
 

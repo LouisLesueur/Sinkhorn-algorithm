@@ -33,16 +33,16 @@ matrix<float> gen_C(int m){
   return make_symmetric(C);
 }
 
-matrix<float> ave(float tau, matrix<float> u, matrix<float> u1){
+matrix<float> ave(float tau, const matrix<float> &u, const matrix<float> &u1){
 	return tau*u + (1-tau)*u1;
 }
 
-matrix<float> lse(matrix<float> M){
+matrix<float> lse(const matrix<float> &M){
     return log(sum_cols(exp(M)));
 }
 
 
-matrix<float> M(const matrix<float> &H, matrix<float> u, matrix<float> v, matrix<float> C, float eps, int m){
+matrix<float> M(const matrix<float> &H, const matrix<float> &u, const matrix<float> &v, const matrix<float> &C, float eps, int m){
     return (-C + u*trans(H) + H*trans(v))/eps;
 }
 
@@ -65,37 +65,45 @@ simplex bar_log(const matrix<float> &C, const simplex & p1, const simplex & p2, 
 
     for(int l=0; l<n_iter; l++){
 
-
         // Computing uk(n+1)
+        #pragma omp parallel sections
+        {
+        #pragma omp section
+        {
         u1 = ave(tau, u1, eps*(log(p1.val()) - lse(M(H, u1, v1, C, eps, m))) + u1);
-        u2 = ave(tau, u2, eps*(log(p2.val()) - lse(M(H, u2, v2, C, eps, m))) + u2);
-
-        cout << int(0.25*((float)(l+1)/(float)n_iter) * 100.0) << "% \r (u updated)";
-        cout.flush();
-
         LSE_v1 = lse(trans(M(H, u1, v1, C, eps, m)));
+        }
+        #pragma omp section
+        {
+        u2 = ave(tau, u2, eps*(log(p2.val()) - lse(M(H, u2, v2, C, eps, m))) + u2);
         LSE_v2 = lse(trans(M(H, u2, v2, C, eps, m)));
-
-        cout << int(0.5*((float)l/(float)n_iter) * 100.0) << "% \r (LSEv computed)";
-        cout.flush();
+        }
+        }
 
         Lp = lamb1 * LSE_v1 + lamb2 * LSE_v2 ;
 
-        cout << int(0.75*((float)(l+1)/(float)n_iter) * 100.0) << "% \r (Lp computed)";
-        cout.flush();
+        #pragma omp parallel sections
+        {
+        #pragma omp section
+        {
+        v1 = ave(tau_v, v1, eps*(Lp - LSE_v1));
+        }
+        #pragma omp section
+        {
+        v2 = ave(tau_v, v2, eps*(Lp - LSE_v2));
+        }
+        }
 
         // Computing vk(n+1)
-        v1 = ave(tau_v, v1, eps*(Lp - LSE_v1));
-        v2 = ave(tau_v, v2, eps*(Lp - LSE_v2));
 
-        cout << int((float)(l+1)/(float)n_iter * 100.0) << "% \r (v updated)";
+        cout << int((float)(l+1)/(float)n_iter * 100.0) << "% \r";
         cout.flush();
 
     }
 
-    matrix<float> p = (lamb1*p1.cte() + lamb2*p2.cte()) * exp(Lp);
+    matrix<float> p = exp(Lp);
 
-    simplex out(p, p1.w(), p1.h(), 1, name);
+    simplex out(p, p1.w(), p1.h(), 255/max(p), name);
     return out;
 }
 
@@ -130,6 +138,6 @@ simplex bar(const matrix<float> &K, const simplex & p1, const simplex & p2, floa
 
     }
 
-    simplex out((lamb1*p1.cte() + lamb2*p2.cte())*p, p1.w(), p1.h(), 1, name);
+    simplex out(p, p1.w(), p1.h(), 255/max(p), name);
     return out;
 }
