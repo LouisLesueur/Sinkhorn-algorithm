@@ -11,7 +11,7 @@ using namespace std;
 //Default parameters
 int n_iter = 10, steps = 1;
 float lambda = 0.5, lambdai=0, lambdao=1, fact = 1000;
-string in="../circle.png", out="../square.png";
+string in="../images/circle.png", out="../images/square.png";
 
 void PrintHelp()
 {
@@ -110,7 +110,7 @@ int main(int argc, char **argv)
         cout<<"Generating C..."<<endl;
         matrix<float> C=gen_C(IN.length());
 		cout<<"Building bary.png for n_iter ="<<n_iter<<" eps ="<<eps<<" and lambda ="<<lambda<<endl;
-        simplex barycenter = bar_log(C, IN, OUT, lambda, eps, n_iter, "bary.png");
+        simplex barycenter = bar_log(C, IN, OUT, lambda, eps, n_iter, "../out/bary.png");
         //simplex barycenter = bar(K, IN, OUT, lambda, eps, n_iter, "bary.png");
 		barycenter.export_to_img();
 		return 0;
@@ -123,7 +123,7 @@ int main(int argc, char **argv)
 
 		for(int i=0; i<steps; i++){
 			lambda = (1-(float(i)/float(steps-1)))*lambdai + (float(i)/float(steps-1))*lambdao;
-			string name = "bary";
+			string name = "../out/bary";
 			name += to_string(i);
 			name += ".png";
 			cout<<"building "<<name<<" for n_iter ="<<n_iter<<" eps ="<<eps<<" and lambda ="<<lambda<<endl;
