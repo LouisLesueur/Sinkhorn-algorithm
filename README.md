@@ -8,6 +8,7 @@ If you don't have openmp you should install it first !
 This project uses CMake. To compile it, follow the instructions:
 
 ```
+mkdir code/build
 cd code/build
 cmake ..
 make
