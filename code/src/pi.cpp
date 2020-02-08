@@ -33,6 +33,10 @@ matrix<float> gen_C(int m){
   return make_symmetric(C);
 }
 
+matrix<float> ave(float tau, matrix<float> u, matrix<float> u1){
+	return tau*u + (1-tau)*u1;
+}
+
 matrix<float> lse(matrix<float> M){
     return log(sum_cols(exp(M)));
 }
@@ -46,6 +50,8 @@ simplex bar_log(const matrix<float> &C, const simplex & p1, const simplex & p2, 
 
     float lamb1=lambda, lamb2=1-lambda;
     int m = p1.length();
+    float tau = -0.5;
+    float tau_v = -0.5;
     const matrix<float> H = ones_matrix<float>(m,1);
 
     matrix<float> u1, u2, v1, v2, Lp, LSE_v1, LSE_v2;
@@ -61,8 +67,8 @@ simplex bar_log(const matrix<float> &C, const simplex & p1, const simplex & p2, 
 
 
         // Computing uk(n+1)
-        u1 += eps*(log(p1.val()) - lse(M(H, u1, v1, C, eps, m)));
-        u2 += eps*(log(p2.val()) - lse(M(H, u2, v2, C, eps, m)));
+        u1 = ave(tau, u1, eps*(log(p1.val()) - lse(M(H, u1, v1, C, eps, m))) + u1);
+        u2 = ave(tau, u2, eps*(log(p2.val()) - lse(M(H, u2, v2, C, eps, m))) + u2);
 
         cout << int(0.25*((float)(l+1)/(float)n_iter) * 100.0) << "% \r (u updated)";
         cout.flush();
@@ -79,8 +85,8 @@ simplex bar_log(const matrix<float> &C, const simplex & p1, const simplex & p2, 
         cout.flush();
 
         // Computing vk(n+1)
-        v1 += eps*(Lp - LSE_v1);
-        v2 += eps*(Lp - LSE_v2);
+        v1 = ave(tau_v, v1, eps*(Lp - LSE_v1));
+        v2 = ave(tau_v, v2, eps*(Lp - LSE_v2));
 
         cout << int((float)(l+1)/(float)n_iter * 100.0) << "% \r (v updated)";
         cout.flush();
