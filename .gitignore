@@ -1,2 +1,4 @@
 build/
 *.png
+!images/circle.png
+!images/square.png
