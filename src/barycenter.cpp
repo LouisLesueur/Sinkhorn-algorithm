@@ -8,7 +8,6 @@ using namespace std;
 
 
 simplex bar_log(const matrix<float> &C, const simplex & p1, const simplex & p2, float lambda, float eps, int n_iter, string name){
-
     float lamb1=lambda, lamb2=1-lambda;
     int m = p1.length();
     float tau = -0.5;
