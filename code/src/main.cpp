@@ -1,5 +1,6 @@
 #include "simplex.h"
-#include "pi.h"
+#include "barycenter.h"
+#include "utils.h"
 #include <getopt.h>
 #include <cmath>
 #include <iostream>

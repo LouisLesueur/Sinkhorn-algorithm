@@ -136,6 +136,33 @@ dlib/fast:
 	$(MAKE) -f dlib_build/CMakeFiles/dlib.dir/build.make dlib_build/CMakeFiles/dlib.dir/build
 .PHONY : dlib/fast
 
+src/barycenter.o: src/barycenter.cpp.o
+
+.PHONY : src/barycenter.o
+
+# target to build an object file
+src/barycenter.cpp.o:
+	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/src/barycenter.cpp.o
+.PHONY : src/barycenter.cpp.o
+
+src/barycenter.i: src/barycenter.cpp.i
+
+.PHONY : src/barycenter.i
+
+# target to preprocess a source file
+src/barycenter.cpp.i:
+	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/src/barycenter.cpp.i
+.PHONY : src/barycenter.cpp.i
+
+src/barycenter.s: src/barycenter.cpp.s
+
+.PHONY : src/barycenter.s
+
+# target to generate assembly for a file
+src/barycenter.cpp.s:
+	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/src/barycenter.cpp.s
+.PHONY : src/barycenter.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -162,33 +189,6 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
-
-src/pi.o: src/pi.cpp.o
-
-.PHONY : src/pi.o
-
-# target to build an object file
-src/pi.cpp.o:
-	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/src/pi.cpp.o
-.PHONY : src/pi.cpp.o
-
-src/pi.i: src/pi.cpp.i
-
-.PHONY : src/pi.i
-
-# target to preprocess a source file
-src/pi.cpp.i:
-	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/src/pi.cpp.i
-.PHONY : src/pi.cpp.i
-
-src/pi.s: src/pi.cpp.s
-
-.PHONY : src/pi.s
-
-# target to generate assembly for a file
-src/pi.cpp.s:
-	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/src/pi.cpp.s
-.PHONY : src/pi.cpp.s
 
 src/simplex.o: src/simplex.cpp.o
 
@@ -217,6 +217,33 @@ src/simplex.cpp.s:
 	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/src/simplex.cpp.s
 .PHONY : src/simplex.cpp.s
 
+src/utils.o: src/utils.cpp.o
+
+.PHONY : src/utils.o
+
+# target to build an object file
+src/utils.cpp.o:
+	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/src/utils.cpp.o
+.PHONY : src/utils.cpp.o
+
+src/utils.i: src/utils.cpp.i
+
+.PHONY : src/utils.i
+
+# target to preprocess a source file
+src/utils.cpp.i:
+	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/src/utils.cpp.i
+.PHONY : src/utils.cpp.i
+
+src/utils.s: src/utils.cpp.s
+
+.PHONY : src/utils.s
+
+# target to generate assembly for a file
+src/utils.cpp.s:
+	$(MAKE) -f CMakeFiles/MOPSI.dir/build.make CMakeFiles/MOPSI.dir/src/utils.cpp.s
+.PHONY : src/utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -227,15 +254,18 @@ help:
 	@echo "... MOPSI"
 	@echo "... edit_cache"
 	@echo "... dlib"
+	@echo "... src/barycenter.o"
+	@echo "... src/barycenter.i"
+	@echo "... src/barycenter.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/pi.o"
-	@echo "... src/pi.i"
-	@echo "... src/pi.s"
 	@echo "... src/simplex.o"
 	@echo "... src/simplex.i"
 	@echo "... src/simplex.s"
+	@echo "... src/utils.o"
+	@echo "... src/utils.i"
+	@echo "... src/utils.s"
 .PHONY : help
 
 

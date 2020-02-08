@@ -4764,14 +4764,32 @@ vector
 platform.h
 ../lib/dlib/dlib/platform.h
 
-/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.cpp
-pi.h
-/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/barycenter.cpp
+barycenter.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/barycenter.h
 
-/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/barycenter.h
 simplex.h
 /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.h
+utils.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/utils.h
 dlib/matrix.h
+-
+
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/main.cpp
+simplex.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.h
+barycenter.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/barycenter.h
+utils.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/utils.h
+getopt.h
+-
+cmath
+-
+iostream
+-
+cstdlib
 -
 
 /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.h
@@ -4794,5 +4812,15 @@ dlib/matrix.h
 dlib/array2d.h
 -
 dlib/image_io.h
+-
+
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/utils.cpp
+utils.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/utils.h
+
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/utils.h
+simplex.h
+/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.h
+dlib/matrix.h
 -
 

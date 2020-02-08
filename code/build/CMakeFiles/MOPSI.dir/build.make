@@ -70,18 +70,18 @@ CMakeFiles/MOPSI.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MOPSI.dir/src/main.cpp.s"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/main.cpp -o CMakeFiles/MOPSI.dir/src/main.cpp.s
 
-CMakeFiles/MOPSI.dir/src/pi.cpp.o: CMakeFiles/MOPSI.dir/flags.make
-CMakeFiles/MOPSI.dir/src/pi.cpp.o: ../src/pi.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MOPSI.dir/src/pi.cpp.o"
-	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MOPSI.dir/src/pi.cpp.o -c /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.cpp
+CMakeFiles/MOPSI.dir/src/barycenter.cpp.o: CMakeFiles/MOPSI.dir/flags.make
+CMakeFiles/MOPSI.dir/src/barycenter.cpp.o: ../src/barycenter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MOPSI.dir/src/barycenter.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MOPSI.dir/src/barycenter.cpp.o -c /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/barycenter.cpp
 
-CMakeFiles/MOPSI.dir/src/pi.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MOPSI.dir/src/pi.cpp.i"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.cpp > CMakeFiles/MOPSI.dir/src/pi.cpp.i
+CMakeFiles/MOPSI.dir/src/barycenter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MOPSI.dir/src/barycenter.cpp.i"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/barycenter.cpp > CMakeFiles/MOPSI.dir/src/barycenter.cpp.i
 
-CMakeFiles/MOPSI.dir/src/pi.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MOPSI.dir/src/pi.cpp.s"
-	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/pi.cpp -o CMakeFiles/MOPSI.dir/src/pi.cpp.s
+CMakeFiles/MOPSI.dir/src/barycenter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MOPSI.dir/src/barycenter.cpp.s"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/barycenter.cpp -o CMakeFiles/MOPSI.dir/src/barycenter.cpp.s
 
 CMakeFiles/MOPSI.dir/src/simplex.cpp.o: CMakeFiles/MOPSI.dir/flags.make
 CMakeFiles/MOPSI.dir/src/simplex.cpp.o: ../src/simplex.cpp
@@ -96,18 +96,33 @@ CMakeFiles/MOPSI.dir/src/simplex.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MOPSI.dir/src/simplex.cpp.s"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/simplex.cpp -o CMakeFiles/MOPSI.dir/src/simplex.cpp.s
 
+CMakeFiles/MOPSI.dir/src/utils.cpp.o: CMakeFiles/MOPSI.dir/flags.make
+CMakeFiles/MOPSI.dir/src/utils.cpp.o: ../src/utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MOPSI.dir/src/utils.cpp.o"
+	/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MOPSI.dir/src/utils.cpp.o -c /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/utils.cpp
+
+CMakeFiles/MOPSI.dir/src/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MOPSI.dir/src/utils.cpp.i"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/utils.cpp > CMakeFiles/MOPSI.dir/src/utils.cpp.i
+
+CMakeFiles/MOPSI.dir/src/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MOPSI.dir/src/utils.cpp.s"
+	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/src/utils.cpp -o CMakeFiles/MOPSI.dir/src/utils.cpp.s
+
 # Object files for target MOPSI
 MOPSI_OBJECTS = \
 "CMakeFiles/MOPSI.dir/src/main.cpp.o" \
-"CMakeFiles/MOPSI.dir/src/pi.cpp.o" \
-"CMakeFiles/MOPSI.dir/src/simplex.cpp.o"
+"CMakeFiles/MOPSI.dir/src/barycenter.cpp.o" \
+"CMakeFiles/MOPSI.dir/src/simplex.cpp.o" \
+"CMakeFiles/MOPSI.dir/src/utils.cpp.o"
 
 # External object files for target MOPSI
 MOPSI_EXTERNAL_OBJECTS =
 
 ../bin/MOPSI: CMakeFiles/MOPSI.dir/src/main.cpp.o
-../bin/MOPSI: CMakeFiles/MOPSI.dir/src/pi.cpp.o
+../bin/MOPSI: CMakeFiles/MOPSI.dir/src/barycenter.cpp.o
 ../bin/MOPSI: CMakeFiles/MOPSI.dir/src/simplex.cpp.o
+../bin/MOPSI: CMakeFiles/MOPSI.dir/src/utils.cpp.o
 ../bin/MOPSI: CMakeFiles/MOPSI.dir/build.make
 ../bin/MOPSI: dlib_build/libdlib.a
 ../bin/MOPSI: /usr/lib/libnsl.so
@@ -123,7 +138,7 @@ MOPSI_EXTERNAL_OBJECTS =
 ../bin/MOPSI: /usr/lib/libgomp.so
 ../bin/MOPSI: /usr/lib/libpthread.so
 ../bin/MOPSI: CMakeFiles/MOPSI.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../bin/MOPSI"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lotophagos/Documents/Projets/Sinkhorn-algorithm/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../bin/MOPSI"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MOPSI.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
