@@ -63,36 +63,23 @@ simplex bar_log(const matrix<float> &C, const simplex & p1, const simplex & p2, 
     cout << 0 << "% \r";
     cout.flush();
 
+    #pragma omp parallel for
     for(int l=0; l<n_iter; l++){
 
         // Computing uk(n+1)
-        #pragma omp parallel sections
-        {
-        #pragma omp section
-        {
+
         u1 = ave(tau, u1, eps*(log(p1.val()) - lse(M(H, u1, v1, C, eps, m))) + u1);
         LSE_v1 = lse(trans(M(H, u1, v1, C, eps, m)));
-        }
-        #pragma omp section
-        {
+
         u2 = ave(tau, u2, eps*(log(p2.val()) - lse(M(H, u2, v2, C, eps, m))) + u2);
         LSE_v2 = lse(trans(M(H, u2, v2, C, eps, m)));
-        }
-        }
+
 
         Lp = lamb1 * LSE_v1 + lamb2 * LSE_v2 ;
 
-        #pragma omp parallel sections
-        {
-        #pragma omp section
-        {
         v1 = ave(tau_v, v1, eps*(Lp - LSE_v1));
-        }
-        #pragma omp section
-        {
         v2 = ave(tau_v, v2, eps*(Lp - LSE_v2));
-        }
-        }
+
 
         // Computing vk(n+1)
 
