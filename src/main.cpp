@@ -12,7 +12,6 @@ using namespace std;
 int n_iter = 10, steps = 1;
 float lambda = 0.5, lambdai=0, lambdao=1, fact = 1000;
 string in="../images/circle.png", out="../images/square.png";
-bool log_algo = false;
 
 void PrintHelp()
 {
@@ -25,14 +24,13 @@ void PrintHelp()
 		"--lambdai [number] <I>:        Set the start value of lambda for a serie\n"
 		"--lambdao [number] <O>:        Set the stop value of lambda for a serie\n"
 		"--steps [number] <s>:           Set the number of steps\n"
-		"--log <L>              Set if you want log algorithm\n"
 		"--help:                Show help\n";
 	exit(1);
 }
 
 void ProcessArgs(int argc, char** argv)
 {
-	const char* const short_opts = "i:o:n:f:l:I:O:s:Lh";
+	const char* const short_opts = "i:o:n:f:l:I:O:s:h";
 	const option long_opts[] = {
 		{"in", required_argument, nullptr, 'i'},
 		{"out", required_argument, nullptr, 'o'},
@@ -42,7 +40,6 @@ void ProcessArgs(int argc, char** argv)
 		{"lambdai", required_argument, nullptr, 'I'},
 		{"lambdao", required_argument, nullptr, 'O'},
 		{"steps", required_argument, nullptr, 's'},
-		{"log", no_argument, nullptr, 'L'},
 		{"help", no_argument, nullptr, 'h'},
 		{nullptr, no_argument, nullptr, 0}
 	};
@@ -83,10 +80,6 @@ void ProcessArgs(int argc, char** argv)
 				lambdao = stof(optarg);
 				cout << "lambdao set to: " << lambdao << endl;
 				break;
-			case 'L':
-				log_algo = true;
-				cout << "lambdao set to: " << lambdao << endl;
-				break;
 			case 's':
 				steps = stoi(optarg);
 				cout <<steps<< " steps" << endl;
@@ -113,12 +106,11 @@ int main(int argc, char **argv)
 	float eps=1/float(fact*IN.length());
 
 	cout<<"Generating K..."<<endl;
-	K= (log_algo) ? gen_C(IN.length()) : gen_K(IN.length(), eps);
+	K = gen_K(IN.length(), eps);
 
 	if(steps==1){
 		    cout<<"Building bary.png for n_iter ="<<n_iter<<" eps ="<<eps<<" and lambda ="<<lambda<<endl;
-				simplex barycenter = (log_algo) ? bar_log(K, IN, OUT, lambda, eps, n_iter, "../out/bary.png") :
-				                                  bar(K, IN, OUT, lambda, eps, n_iter, "bary.png");
+				simplex barycenter = bar(K, IN, OUT, lambda, eps, n_iter, "../out/bary.png");
 				barycenter.export_to_img();
 				return 0;
 	}
@@ -132,8 +124,7 @@ int main(int argc, char **argv)
 			name += to_string(i);
 			name += ".png";
 			cout<<"building "<<name<<" for n_iter ="<<n_iter<<" eps ="<<eps<<" and lambda ="<<lambda<<endl;
-			simplex barycenter = (log_algo) ? bar_log(K, IN, OUT, lambda, eps, n_iter, name) :
-			                                  bar(K, IN, OUT, lambda, eps, n_iter, name);
+			simplex barycenter = bar(K, IN, OUT, lambda, eps, n_iter, name);
 			cout<<endl;
 			barycenter.export_to_img();
 		}

@@ -7,5 +7,3 @@ using namespace std;
 
 //The regular Sinkhorn algorithm
 simplex bar(const matrix<float> &K, const simplex & p1, const simplex & p2, float lambda, float eps, int n_iter, string name);
-// log Sinkhorn
-simplex bar_log(const matrix<float> &C, const simplex & p1, const simplex & p2, float lambda, float eps, int n_iter, string name);
