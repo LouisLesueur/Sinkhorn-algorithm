@@ -53,11 +53,11 @@ void ProcessArgs(int argc, char** argv)
 		switch (opt)
 		{
 			case 'i':
-				in = string(optarg);
+				in = "../images/" + string(optarg);
 				cout<<"Starting from: "<<in<<endl;
 				break;
 			case 'o':
-				out = string(optarg);
+				out = "../images/" + string(optarg);
 				cout<<"Going to: "<<out<<endl;
 				break;
 			case 'n':
